@@ -60,7 +60,7 @@
     transition:background .2s;
   }
   .brand:hover{background:rgba(14,18,57,.75)}
-  .brand img{height:56px; width:auto; display:block}
+  .brand img{height:84px; width:auto; display:block}
   .nav-actions{display:flex; gap:10px; align-items:center}
   .nav-pill{
     background:rgba(14,18,57,.55);
@@ -325,16 +325,17 @@
     max-width:1300px; width:100%;
     margin:0 auto;
     padding:100px 32px 100px;
-    align-self:flex-end;
+    align-self:stretch;
     display:grid;
     grid-template-columns: 1fr 1fr;
     gap:60px;
-    align-items:end;
+    align-items:stretch;
   }
   @media(max-width:880px){
     .story-content{grid-template-columns:1fr; gap:30px}
   }
   .story-meta{
+    align-self:end;
     display:flex; flex-direction:column; gap:14px;
   }
   .habitat-pills{display:flex; gap:8px; flex-wrap:wrap}
@@ -364,22 +365,24 @@
   }
   .story-body{
     background:rgba(248,239,217,.97);
-    border-radius:14px;
-    padding:22px 24px;
-    max-width:440px;
+    border-radius:16px;
+    padding:48px 36px;
+    max-width:520px;
     justify-self:end;
-    box-shadow:0 14px 40px rgba(0,0,0,.35);
+    align-self:stretch;
+    display:flex; flex-direction:column; justify-content:center;
+    box-shadow:0 18px 50px rgba(0,0,0,.4);
     border:1px solid rgba(255,255,255,.5);
   }
   @media(max-width:880px){
-    .story-body{max-width:none; justify-self:stretch}
+    .story-body{max-width:none; justify-self:stretch; align-self:auto}
   }
   .story-body p{
     font-family:'Cormorant Garamond',serif;
-    font-size:17px;
-    line-height:1.5;
+    font-size:19px;
+    line-height:1.55;
     color:var(--ink);
-    margin-bottom:10px;
+    margin-bottom:12px;
   }
   .story-body p:last-child{margin-bottom:0}
   .story-body .quote{
@@ -387,9 +390,9 @@
   }
   .story-body .shout{
     font-family:'Nunito';
-    font-weight:900; font-size:19px;
+    font-weight:900; font-size:22px;
     color:var(--ember); letter-spacing:1px;
-    margin:6px 0;
+    margin:8px 0;
   }
 
   /* ============ COLORING SECTION ============ */
