@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mr. Myth — Animals Of The World</title>
+<meta name="description" content="A magical 2-in-1 story and coloring adventure for kids ages 2+. Travel the world with Mr. Myth and meet Leo the lion, Ella the elephant, Pip the penguin, and more." />
+<meta property="og:title" content="Mr. Myth — Animals Of The World" />
+<meta property="og:description" content="A magical 2-in-1 story and coloring adventure. Wherever stories begin… Mr. Myth is always nearby." />
+<meta property="og:image" content="images/cover.jpg" />
+<link rel="icon" type="image/png" href="images/favicon.png" />
+<link rel="apple-touch-icon" href="images/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --night:#0e1239;
+    --night-deep:#070926;
+    --gold:#e8b54a;
+    --gold-bright:#ffd56a;
+    --cream:#f8efd9;
+    --paper:#fbf5e4;
+    --ember:#d97640;
+    --ink:#2b1d0d;
+    --soft-ink:#5a4632;
+    --jungle:#1f4d36;
+    --ice:#cfe5f0;
+    --ice-deep:#2a4c6e;
+    --rose:#e8b3a4;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{overflow-x:hidden}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Nunito',system-ui,sans-serif;
+    color:var(--ink);
+    background:var(--night-deep);
+    line-height:1.55;
+  }
+  img{display:block; max-width:100%; height:auto}
+  a{color:inherit}
+
+  /* ============ FIXED NAV ============ */
+  .topbar{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; justify-content:space-between; align-items:center;
+    padding:18px 32px;
+    pointer-events:none;
+  }
+  .topbar > *{pointer-events:auto}
+  .brand{
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(14,18,57,.55);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    padding:6px 14px; border-radius:999px;
+    border:1px solid rgba(255,213,106,.25);
+    text-decoration:none;
+    transition:background .2s;
+  }
+  .brand:hover{background:rgba(14,18,57,.75)}
+  .brand img{height:36px; width:auto; display:block}
+  .nav-actions{display:flex; gap:10px; align-items:center}
+  .nav-pill{
+    background:rgba(14,18,57,.55);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    color:var(--cream);
+    padding:10px 18px; border-radius:999px;
+    border:1px solid rgba(255,213,106,.25);
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+    text-transform:uppercase;
+    text-decoration:none;
+    transition:background .2s, color .2s;
+  }
+  .nav-pill:hover{background:var(--gold); color:var(--night)}
+  .nav-pill.cta{background:var(--gold); color:var(--night); border-color:var(--gold)}
+  .nav-pill.cta:hover{background:var(--gold-bright)}
+  @media(max-width:680px){
+    .topbar{padding:14px 18px}
+    .nav-pill:not(.cta){display:none}
+  }
+
+  /* ============ STARS BG (reused) ============ */
+  .stars{
+    position:absolute; inset:0;
+    background:
+      radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 100%),
+      radial-gradient(1px 1px at 25% 42%, #fff8d6 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 38% 12%, #fff 50%, transparent 100%),
+      radial-gradient(1px 1px at 52% 68%, #fff 50%, transparent 100%),
+      radial-gradient(1px 1px at 67% 28%, #fff8d6 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 78% 55%, #fff 50%, transparent 100%),
+      radial-gradient(1px 1px at 88% 78%, #fff 50%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 8% 78%, #fff8d6 50%, transparent 100%),
+      radial-gradient(1px 1px at 92% 12%, #fff 50%, transparent 100%),
+      radial-gradient(1px 1px at 45% 88%, #fff 50%, transparent 100%);
+    pointer-events:none;
+    opacity:.85;
+  }
+  .stars.dim{opacity:.4}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative; min-height:100svh;
+    background:
+      radial-gradient(ellipse 1200px 700px at 50% 100%, #5a3a8a 0%, transparent 60%),
+      radial-gradient(ellipse 1000px 600px at 20% 30%, #2a3270 0%, transparent 60%),
+      radial-gradient(ellipse 800px 500px at 80% 20%, #3a2a60 0%, transparent 60%),
+      linear-gradient(180deg, var(--night-deep) 0%, #1a1a48 50%, #4a3270 100%);
+    overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+    padding:120px 24px 60px;
+  }
+  .hero-inner{
+    position:relative; z-index:2;
+    display:grid;
+    grid-template-columns: 1fr auto;
+    gap:60px; align-items:center;
+    max-width:1300px; width:100%;
+  }
+  @media(max-width:980px){
+    .hero-inner{grid-template-columns:1fr; text-align:center; gap:40px}
+  }
+
+  .hero-text{color:var(--cream); max-width:600px}
+  .hero-eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:12px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--gold-bright); font-weight:800;
+    margin-bottom:24px;
+  }
+  .hero-eyebrow::before, .hero-eyebrow::after{
+    content:""; width:30px; height:1px; background:var(--gold);
+  }
+  @media(max-width:980px){.hero-eyebrow{justify-content:center}}
+
+  h1.hero-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:clamp(54px, 8vw, 104px);
+    line-height:.96;
+    letter-spacing:-.02em;
+    margin-bottom:8px;
+    color:var(--cream);
+    text-shadow:0 4px 30px rgba(0,0,0,.5);
+  }
+  h1.hero-title .gold{
+    color:var(--gold-bright);
+    font-style:italic;
+  }
+  .hero-sub{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(22px,2.5vw,30px);
+    font-style:italic;
+    color:var(--gold);
+    margin-bottom:28px;
+    font-weight:400;
+  }
+  .hero-lede{
+    font-size:18px;
+    color:rgba(248,239,217,.85);
+    margin-bottom:36px;
+    max-width:520px;
+  }
+  @media(max-width:980px){.hero-lede{margin-left:auto; margin-right:auto}}
+
+  .hero-cta-row{display:flex; gap:14px; flex-wrap:wrap; align-items:center}
+  @media(max-width:980px){.hero-cta-row{justify-content:center}}
+  .btn-gold{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--gold);
+    color:var(--night-deep);
+    padding:18px 32px;
+    border-radius:999px;
+    font-weight:800; font-size:15px; letter-spacing:1px; text-transform:uppercase;
+    text-decoration:none;
+    box-shadow:0 10px 40px rgba(255,213,106,.35), 0 0 0 1px rgba(255,213,106,.4);
+    transition:transform .2s, box-shadow .2s;
+  }
+  .btn-gold:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 50px rgba(255,213,106,.5), 0 0 0 1px var(--gold-bright);
+  }
+  .btn-ghost-light{
+    color:var(--cream); text-decoration:none;
+    font-weight:700; font-size:14px; letter-spacing:1px; text-transform:uppercase;
+    padding:18px 4px;
+    border-bottom:2px solid var(--gold);
+  }
+
+  /* hero cover */
+  .hero-cover{
+    position:relative;
+    width:min(360px, 80vw);
+    aspect-ratio: 2/3;
+    transform: rotate(-3deg);
+    animation: floatCover 7s ease-in-out infinite;
+  }
+  .hero-cover img{
+    width:100%; height:100%; object-fit:cover;
+    border-radius:8px;
+    box-shadow:
+      0 40px 80px rgba(0,0,0,.6),
+      0 0 0 1px rgba(255,213,106,.3),
+      -10px 0 0 rgba(0,0,0,.18),
+      inset 6px 0 12px rgba(0,0,0,.2);
+  }
+  /* gold glow */
+  .hero-cover::before{
+    content:""; position:absolute; inset:-30px;
+    background:radial-gradient(ellipse at center, rgba(255,213,106,.35) 0%, transparent 65%);
+    z-index:-1; filter:blur(20px);
+  }
+  @keyframes floatCover{
+    0%,100%{transform:rotate(-3deg) translateY(0)}
+    50%{transform:rotate(-3deg) translateY(-16px)}
+  }
+
+  /* sparkles on hero */
+  .sparkles{position:absolute; inset:0; pointer-events:none; z-index:1}
+  .sparkle{
+    position:absolute; color:var(--gold-bright);
+    font-size:14px; opacity:0; animation: twinkle 4s ease-in-out infinite;
+  }
+  @keyframes twinkle{
+    0%,100%{opacity:0; transform:scale(.5)}
+    50%{opacity:1; transform:scale(1)}
+  }
+
+  .scroll-cue{
+    position:absolute; bottom:30px; left:50%; transform:translateX(-50%);
+    color:rgba(248,239,217,.6);
+    font-size:11px; letter-spacing:3px; text-transform:uppercase;
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    animation: bounce 2.5s ease-in-out infinite;
+  }
+  @keyframes bounce{
+    0%,100%{transform:translate(-50%, 0)}
+    50%{transform:translate(-50%, 10px)}
+  }
+
+  /* ============ INTRO QUOTE SECTION ============ */
+  .intro{
+    position:relative;
+    background:#a8c6e0; /* the cloud color from page 3 */
+    min-height:90svh;
+    overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .intro-bg{
+    position:absolute; inset:0;
+    background-image:url('images/intro.jpg');
+    background-size:cover; background-position:center;
+    z-index:0;
+  }
+  .intro-bg::after{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(ellipse at center, transparent 30%, rgba(168,198,224,.55) 90%);
+  }
+  .intro-text{
+    position:relative; z-index:2;
+    text-align:center; max-width:760px;
+    padding:120px 32px;
+  }
+  .intro-text p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(24px, 3.5vw, 38px);
+    line-height:1.4;
+    color:#2b3f6b;
+    margin-bottom:22px;
+    text-shadow:0 2px 20px rgba(255,255,255,.6);
+  }
+  .intro-text p em{color:var(--ember); font-weight:600}
+  .intro-text .signoff{
+    font-size:14px; letter-spacing:4px; text-transform:uppercase;
+    color:#5a6b8c; font-weight:800; font-family:'Nunito';
+    margin-top:30px;
+    text-shadow:none;
+  }
+
+  /* ============ STORY JOURNEY ============ */
+  .journey-header{
+    background:var(--night-deep);
+    color:var(--cream);
+    text-align:center;
+    padding:90px 24px 60px;
+    position:relative; overflow:hidden;
+  }
+  .journey-header h2{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(40px, 6vw, 72px);
+    line-height:1.05;
+    margin-bottom:14px;
+  }
+  .journey-header h2 em{color:var(--gold-bright)}
+  .journey-header p{
+    color:rgba(248,239,217,.7);
+    max-width:520px; margin:0 auto;
+    font-size:17px;
+  }
+
+  /* each story = big stacked panel */
+  .story{
+    position:relative;
+    min-height:100svh;
+    display:flex; align-items:stretch;
+    overflow:hidden;
+  }
+  .story-art{
+    position:absolute; inset:0; z-index:0;
+  }
+  .story-art img{
+    width:100%; height:100%; object-fit:cover; object-position:center;
+  }
+  .story-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,.0) 40%, rgba(0,0,0,.55) 100%);
+    z-index:1;
+  }
+  .story-content{
+    position:relative; z-index:2;
+    max-width:1300px; width:100%;
+    margin:0 auto;
+    padding:100px 32px 100px;
+    align-self:flex-end;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:60px;
+    align-items:end;
+  }
+  @media(max-width:880px){
+    .story-content{grid-template-columns:1fr; gap:30px}
+  }
+  .story-meta{
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .habitat-pills{display:flex; gap:8px; flex-wrap:wrap}
+  .habitat-pill{
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(0,0,0,.4);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    color:var(--cream);
+    padding:8px 14px; border-radius:999px;
+    border:1px solid rgba(255,255,255,.2);
+    font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:800;
+  }
+  .habitat-pill .dot{width:6px; height:6px; border-radius:50%; background:var(--gold-bright)}
+  .story-number{
+    font-family:'Cormorant Garamond',serif;
+    font-size:14px; letter-spacing:5px; text-transform:uppercase;
+    color:var(--gold-bright); font-weight:600;
+  }
+  .story-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(38px, 5vw, 64px);
+    line-height:1.05;
+    color:#fff;
+    text-shadow:0 2px 20px rgba(0,0,0,.5);
+  }
+  .story-body{
+    background:rgba(248,239,217,.96);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    border-radius:18px;
+    padding:32px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+    border:1px solid rgba(255,255,255,.5);
+  }
+  .story-body p{
+    font-family:'Cormorant Garamond',serif;
+    font-size:19px;
+    line-height:1.55;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+  .story-body p:last-child{margin-bottom:0}
+  .story-body .quote{
+    font-style:italic; color:var(--ember); font-weight:600;
+  }
+  .story-body .shout{
+    font-family:'Nunito';
+    font-weight:900; font-size:22px;
+    color:var(--ember); letter-spacing:1px;
+    margin:8px 0;
+  }
+
+  /* ============ COLORING SECTION ============ */
+  .coloring{
+    background:var(--paper);
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(232,181,74,.08) 0%, transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(217,118,64,.06) 0%, transparent 40%);
+    padding:120px 32px;
+    position:relative;
+  }
+  .coloring-inner{max-width:1200px; margin:0 auto}
+  .coloring-header{
+    text-align:center; margin-bottom:60px;
+  }
+  .coloring-eyebrow{
+    display:inline-block;
+    font-size:12px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--ember); font-weight:800;
+    margin-bottom:14px;
+  }
+  .coloring-header h2{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(40px, 6vw, 64px);
+    line-height:1.05;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+  .coloring-header h2 em{color:var(--ember); font-style:italic}
+  .coloring-header p{
+    color:var(--soft-ink); max-width:560px; margin:0 auto;
+    font-size:17px;
+  }
+
+  .coloring-grid{
+    display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
+  }
+  @media(max-width:880px){.coloring-grid{grid-template-columns:repeat(2, 1fr)}}
+  .col-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:
+      0 2px 0 rgba(43,29,13,.1),
+      0 20px 40px rgba(43,29,13,.12);
+    transition: transform .3s ease;
+    position:relative;
+  }
+  .col-card:nth-child(1){transform: rotate(-2deg)}
+  .col-card:nth-child(2){transform: rotate(1.5deg)}
+  .col-card:nth-child(3){transform: rotate(-1deg)}
+  .col-card:nth-child(4){transform: rotate(2deg)}
+  .col-card:hover{transform:rotate(0) translateY(-6px) scale(1.02)}
+  .col-card img{width:100%; aspect-ratio:2/3; object-fit:cover}
+  .col-card .tape{
+    position:absolute; top:-10px; left:50%; transform:translateX(-50%) rotate(-2deg);
+    background:rgba(232,181,74,.5);
+    width:80px; height:22px;
+    border-radius:2px;
+    border:1px dashed rgba(43,29,13,.2);
+  }
+
+  /* ============ DETAILS & CTA ============ */
+  .details-section{
+    background:linear-gradient(180deg, var(--night-deep) 0%, #1a1a48 100%);
+    color:var(--cream);
+    padding:120px 32px;
+    position:relative;
+    overflow:hidden;
+  }
+  .details-inner{
+    max-width:1100px; margin:0 auto;
+    display:grid; grid-template-columns: 1fr 1fr; gap:80px; align-items:center;
+    position:relative; z-index:2;
+  }
+  @media(max-width:880px){
+    .details-inner{grid-template-columns:1fr; gap:40px}
+  }
+
+  .details-cover{
+    position:relative;
+    transform:rotate(2deg);
+  }
+  .details-cover img{
+    width:100%;
+    border-radius:8px;
+    box-shadow:0 40px 100px rgba(0,0,0,.6), 0 0 0 1px rgba(255,213,106,.3);
+  }
+  .details-cover::before{
+    content:""; position:absolute; inset:-40px;
+    background:radial-gradient(ellipse at center, rgba(255,213,106,.3) 0%, transparent 65%);
+    z-index:-1; filter:blur(20px);
+  }
+
+  .details-content h2{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(38px, 5vw, 58px);
+    line-height:1.05;
+    color:var(--cream);
+    margin-bottom:20px;
+  }
+  .details-content h2 em{color:var(--gold-bright); font-style:italic}
+  .details-content > p{
+    color:rgba(248,239,217,.8); font-size:17px;
+    margin-bottom:30px;
+  }
+  .specs{
+    display:grid; grid-template-columns:auto 1fr; gap:14px 24px;
+    padding:24px 0;
+    border-top:1px solid rgba(255,213,106,.2);
+    border-bottom:1px solid rgba(255,213,106,.2);
+    margin-bottom:30px;
+  }
+  .specs dt{
+    font-size:11px; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--gold-bright); font-weight:800;
+    align-self:center;
+  }
+  .specs dd{font-size:15px; color:var(--cream)}
+  .price-row{
+    display:flex; align-items:baseline; gap:14px;
+    margin-bottom:24px;
+  }
+  .price-row .amt{
+    font-family:'Cormorant Garamond',serif;
+    font-size:42px; font-weight:600; color:var(--gold-bright);
+  }
+  .price-row .note{color:rgba(248,239,217,.6); font-size:13px}
+
+  /* ============ FOOTER ============ */
+  footer{
+    background:var(--night-deep);
+    color:rgba(248,239,217,.6);
+    padding:40px 32px;
+    text-align:center;
+    border-top:1px solid rgba(255,213,106,.15);
+    font-size:13px;
+  }
+  footer .brand{margin:0 auto 16px; display:inline-flex; background:transparent; border:none; padding:0}
+  footer .brand img{height:60px}
+  footer .links{display:flex; gap:18px; justify-content:center; margin-bottom:14px}
+  footer .links a{color:var(--cream); text-decoration:none; font-weight:700; font-size:13px}
+  footer .links a:hover{color:var(--gold-bright)}
+
+  /* ============ REVEAL ============ */
+  .reveal{opacity:0; transform:translateY(30px); transition:opacity 1s ease, transform 1s ease}
+  .reveal.in{opacity:1; transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="topbar">
+  <a href="#" class="brand" aria-label="Mr. Myth">
+    <img src="images/logo-nav.png" alt="Mr. Myth" />
+  </a>
+  <div class="nav-actions">
+    <a href="#journey" class="nav-pill">The Stories</a>
+    <a href="#coloring" class="nav-pill">Coloring</a>
+    <a class="nav-pill cta" href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">Buy →</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="stars"></div>
+  <div class="sparkles">
+    <span class="sparkle" style="top:12%; left:22%; animation-delay:0s">✦</span>
+    <span class="sparkle" style="top:28%; left:78%; animation-delay:.8s">✧</span>
+    <span class="sparkle" style="top:62%; left:18%; animation-delay:1.6s; font-size:18px">✦</span>
+    <span class="sparkle" style="top:75%; left:82%; animation-delay:2.4s">✧</span>
+    <span class="sparkle" style="top:42%; left:8%; animation-delay:3.2s">✦</span>
+    <span class="sparkle" style="top:20%; left:55%; animation-delay:.4s; font-size:10px">✧</span>
+  </div>
+
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Brand new · 1 May 2026</div>
+      <h1 class="hero-title">
+        Mr. <span class="gold">Myth</span>
+      </h1>
+      <p class="hero-sub">Animals of the World</p>
+      <p class="hero-lede">
+        A 2-in-1 story &amp; coloring adventure for young readers. Travel from
+        savanna sunsets to glacier waters and meet a new friend on every page.
+      </p>
+      <div class="hero-cta-row">
+        <a class="btn-gold" href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">
+          Buy on Amazon · $19.99
+        </a>
+        <a class="btn-ghost-light" href="#journey">Peek inside ↓</a>
+      </div>
+    </div>
+
+    <div class="hero-cover">
+      <img src="images/cover.jpg" alt="Mr. Myth — Animals Of The World book cover" />
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    Scroll<br/>↓
+  </div>
+</section>
+
+<!-- ============ INTRO QUOTE ============ -->
+<section class="intro">
+  <div class="intro-bg"></div>
+  <div class="intro-text reveal">
+    <p>
+      High above the clouds and beyond the stars,<br/>
+      there is a quiet guardian named <em>Mr. Myth</em>.
+    </p>
+    <p>Watching over <em>imagination</em>.</p>
+    <p>Wherever stories begin…<br/>Mr. Myth is always nearby.</p>
+    <p class="signoff">— From the book</p>
+  </div>
+</section>
+
+<!-- ============ JOURNEY HEADER ============ -->
+<div class="journey-header" id="journey">
+  <div class="stars dim"></div>
+  <div class="reveal" style="position:relative; z-index:2">
+    <h2>Six little friends.<br/><em>One big adventure.</em></h2>
+    <p>Each story takes Mr. Myth — and your child — to a new corner of the world.</p>
+  </div>
+</div>
+
+<!-- ============ STORY: LION ============ -->
+<section class="story" id="lion">
+  <div class="story-art"><img src="images/lion.jpg" alt="The Brave Lion of the Golden Plains" loading="lazy" /></div>
+  <div class="story-overlay"></div>
+  <div class="story-content">
+    <div class="story-meta reveal">
+      <div class="habitat-pills">
+        <span class="habitat-pill"><span class="dot"></span>Story 01</span>
+        <span class="habitat-pill"><span class="dot"></span>The Savanna</span>
+      </div>
+      <div class="story-number">— Leo the Lion —</div>
+      <h3 class="story-title">The Brave Lion of the Golden Plains</h3>
+    </div>
+    <div class="story-body reveal">
+      <p>Deep in the warm golden plains, a lion named Leo watched the tall grass sway in the wind.</p>
+      <p>Leo had a mighty roar… but today, he felt unsure. <span class="quote">“What if I'm not brave enough?”</span> he wondered quietly.</p>
+      <p>The wind whispered, the sun glowed… and Leo took a deep breath. Then suddenly —</p>
+      <p class="shout">ROOOAR!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY: ELEPHANT ============ -->
+<section class="story" id="elephant">
+  <div class="story-art"><img src="images/elephant.jpg" alt="The Gentle Giant of the River" loading="lazy" /></div>
+  <div class="story-overlay"></div>
+  <div class="story-content">
+    <div class="story-meta reveal">
+      <div class="habitat-pills">
+        <span class="habitat-pill"><span class="dot"></span>Story 02</span>
+        <span class="habitat-pill"><span class="dot"></span>The River</span>
+      </div>
+      <div class="story-number">— Ella the Elephant —</div>
+      <h3 class="story-title">The Gentle Giant of the River</h3>
+    </div>
+    <div class="story-body reveal">
+      <p>Near a calm river, an elephant named Ella played in the water. Ella was strong… but sometimes, she felt too big.</p>
+      <p><span class="quote">“What if I don't fit in?”</span> she wondered.</p>
+      <p class="shout">SPLASH!</p>
+      <p>She lifted her trunk high and played in the water. In that moment, Ella smiled. Being <em>different</em> made her special.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY: PENGUIN ============ -->
+<section class="story" id="penguin">
+  <div class="story-art"><img src="images/penguin.jpg" alt="The Little Penguin on the Ice" loading="lazy" /></div>
+  <div class="story-overlay"></div>
+  <div class="story-content">
+    <div class="story-meta reveal">
+      <div class="habitat-pills">
+        <span class="habitat-pill"><span class="dot"></span>Story 03</span>
+        <span class="habitat-pill"><span class="dot"></span>The Ice</span>
+      </div>
+      <div class="story-number">— Pip the Penguin —</div>
+      <h3 class="story-title">The Little Penguin on the Ice</h3>
+    </div>
+    <div class="story-body reveal">
+      <p>On a cold sheet of ice, a penguin named Pip waddled carefully. Pip loved to swim… but the water looked so deep.</p>
+      <p><span class="quote">“What if I fall?”</span> he wondered. Pip took a tiny step… then another.</p>
+      <p class="shout">SLIP!</p>
+      <p>He slid right into the water — and started to swim! Pip spun and splashed happily. <span class="quote">“I can do this!”</span> he chirped.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY: PANDA ============ -->
+<section class="story" id="panda">
+  <div class="story-art"><img src="images/panda.jpg" alt="The Playful Panda" loading="lazy" /></div>
+  <div class="story-overlay"></div>
+  <div class="story-content">
+    <div class="story-meta reveal">
+      <div class="habitat-pills">
+        <span class="habitat-pill"><span class="dot"></span>Story 04</span>
+        <span class="habitat-pill"><span class="dot"></span>The Bamboo Forest</span>
+      </div>
+      <div class="story-number">— Bao the Panda —</div>
+      <h3 class="story-title">The Playful Panda</h3>
+    </div>
+    <div class="story-body reveal">
+      <p>In a quiet bamboo forest where the sun trickled through the leaves, a little panda rolled in the soft green grass.</p>
+      <p>He tumbled and laughed and chewed on tender shoots, while Mr. Myth lay close by — watching, smiling, listening.</p>
+      <p>Some adventures are loud. <em>Others are gentle.</em> Both are magic.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY: GIRAFFE ============ -->
+<section class="story" id="giraffe">
+  <div class="story-art"><img src="images/giraffe.jpg" alt="The Tall Giraffe in the Savanna" loading="lazy" /></div>
+  <div class="story-overlay"></div>
+  <div class="story-content">
+    <div class="story-meta reveal">
+      <div class="habitat-pills">
+        <span class="habitat-pill"><span class="dot"></span>Story 05</span>
+        <span class="habitat-pill"><span class="dot"></span>The Open Savanna</span>
+      </div>
+      <div class="story-number">— Gia the Giraffe —</div>
+      <h3 class="story-title">The Tall Giraffe in the Savanna</h3>
+    </div>
+    <div class="story-body reveal">
+      <p>On the wide open savanna, a giraffe named Gia looked around. Gia was very tall… taller than everyone else.</p>
+      <p><span class="quote">“Why am I so different?”</span> she wondered. Gia bent down low… then stretched up high.</p>
+      <p class="shout">REACH!</p>
+      <p>She nibbled leaves from the tallest tree. Gia smiled proudly. Being tall made her <em>special</em>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STORY: TIGER ============ -->
+<section class="story" id="tiger">
+  <div class="story-art"><img src="images/tiger.jpg" alt="The Brave Tiger in the Jungle" loading="lazy" /></div>
+  <div class="story-overlay"></div>
+  <div class="story-content">
+    <div class="story-meta reveal">
+      <div class="habitat-pills">
+        <span class="habitat-pill"><span class="dot"></span>Story 06</span>
+        <span class="habitat-pill"><span class="dot"></span>The Jungle</span>
+      </div>
+      <div class="story-number">— Taro the Tiger —</div>
+      <h3 class="story-title">The Brave Tiger in the Jungle</h3>
+    </div>
+    <div class="story-body reveal">
+      <p>In a deep green jungle, a tiger named Taro walked quietly. Taro was strong… but sometimes he felt unsure.</p>
+      <p><span class="quote">“What if I'm not brave enough?”</span> he wondered. Taro took a slow step… then another.</p>
+      <p class="shout">ROAR!</p>
+      <p>His voice echoed through the trees. Taro stood tall and proud.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COLORING ============ -->
+<section class="coloring" id="coloring">
+  <div class="coloring-inner">
+    <div class="coloring-header reveal">
+      <span class="coloring-eyebrow">The other half of the book</span>
+      <h2>A coloring book, too. <em>Bring it to life.</em></h2>
+      <p>Every story comes paired with a beautiful black-and-white scene — ready for crayons, pencils, or paint. Same characters, same worlds, infinite possibilities.</p>
+    </div>
+
+    <div class="coloring-grid reveal">
+      <div class="col-card"><div class="tape"></div><img src="images/coloring_panda.jpg" alt="Color the Playful Panda" loading="lazy" /></div>
+      <div class="col-card"><div class="tape"></div><img src="images/coloring_frog.jpg" alt="Coloring page — frog in the jungle" loading="lazy" /></div>
+      <div class="col-card"><div class="tape"></div><img src="images/coloring_turtle.jpg" alt="Coloring page — sea turtle" loading="lazy" /></div>
+      <div class="col-card"><div class="tape"></div><img src="images/coloring_shark.jpg" alt="Coloring page — shark" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DETAILS + BUY ============ -->
+<section class="details-section" id="buy">
+  <div class="stars dim"></div>
+  <div class="details-inner">
+    <div class="details-cover reveal">
+      <img src="images/cover.jpg" alt="Mr. Myth book cover" loading="lazy" />
+    </div>
+
+    <div class="details-content reveal">
+      <h2>The whole adventure, in your hands.</h2>
+      <p>A sturdy hardcover with large print, designed to be read aloud at bedtime, colored at the kitchen table, and gifted on the right day.</p>
+
+      <dl class="specs">
+        <dt>Author</dt><dd>Mr. Myth Collection</dd>
+        <dt>Format</dt><dd>Hardcover · Large Print</dd>
+        <dt>Pages</dt><dd>75</dd>
+        <dt>Ages</dt><dd>2 and up</dd>
+        <dt>Released</dt><dd>1 May 2026</dd>
+        <dt>ISBN-13</dt><dd>979-8258409799</dd>
+      </dl>
+
+      <div class="price-row">
+        <span class="amt">$19.99</span>
+        <span class="note">USD · Free delivery · In stock now</span>
+      </div>
+
+      <a class="btn-gold" href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">
+        Get the book →
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#" class="brand" aria-label="Mr. Myth" style="pointer-events:none">
+    <img src="images/logo-nav.png" alt="Mr. Myth" />
+  </a>
+  <div class="links">
+    <a href="#journey">The Stories</a>
+    <a href="#coloring">Coloring</a>
+    <a href="#buy">Buy</a>
+    <a href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">Amazon</a>
+  </div>
+  <p>© 2026 Mr. Myth Collection. Wherever stories begin… Mr. Myth is always nearby.</p>
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', e=>{
+      const id = a.getAttribute('href');
+      if(id.length>1){
+        const t = document.querySelector(id);
+        if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
