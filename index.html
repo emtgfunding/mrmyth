@@ -60,7 +60,7 @@
     transition:background .2s;
   }
   .brand:hover{background:rgba(14,18,57,.75)}
-  .brand img{height:36px; width:auto; display:block}
+  .brand img{height:56px; width:auto; display:block}
   .nav-actions{display:flex; gap:10px; align-items:center}
   .nav-pill{
     background:rgba(14,18,57,.55);
@@ -363,20 +363,23 @@
     text-shadow:0 2px 20px rgba(0,0,0,.5);
   }
   .story-body{
-    background:rgba(248,239,217,.96);
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
-    border-radius:18px;
-    padding:32px;
-    box-shadow:0 20px 60px rgba(0,0,0,.4);
+    background:rgba(248,239,217,.97);
+    border-radius:14px;
+    padding:22px 24px;
+    max-width:440px;
+    justify-self:end;
+    box-shadow:0 14px 40px rgba(0,0,0,.35);
     border:1px solid rgba(255,255,255,.5);
+  }
+  @media(max-width:880px){
+    .story-body{max-width:none; justify-self:stretch}
   }
   .story-body p{
     font-family:'Cormorant Garamond',serif;
-    font-size:19px;
-    line-height:1.55;
+    font-size:17px;
+    line-height:1.5;
     color:var(--ink);
-    margin-bottom:14px;
+    margin-bottom:10px;
   }
   .story-body p:last-child{margin-bottom:0}
   .story-body .quote{
@@ -384,9 +387,9 @@
   }
   .story-body .shout{
     font-family:'Nunito';
-    font-weight:900; font-size:22px;
+    font-weight:900; font-size:19px;
     color:var(--ember); letter-spacing:1px;
-    margin:8px 0;
+    margin:6px 0;
   }
 
   /* ============ COLORING SECTION ============ */
