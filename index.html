@@ -546,6 +546,93 @@
   }
   .price-row .note{color:rgba(248,239,217,.6); font-size:13px}
 
+  /* ============ BLOG ============ */
+  .blog{
+    background:var(--paper);
+    background-image:
+      radial-gradient(circle at 80% 20%, rgba(232,181,74,.08) 0%, transparent 40%),
+      radial-gradient(circle at 20% 80%, rgba(217,118,64,.06) 0%, transparent 40%);
+    padding:120px 32px;
+    position:relative;
+  }
+  .blog-inner{max-width:1200px; margin:0 auto}
+  .blog-header{text-align:center; margin-bottom:60px}
+  .blog-eyebrow{
+    display:inline-block;
+    font-size:12px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--ember); font-weight:800;
+    margin-bottom:14px;
+  }
+  .blog-header h2{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:500;
+    font-size:clamp(40px, 6vw, 64px);
+    line-height:1.05;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+  .blog-header h2 em{color:var(--ember); font-style:italic}
+  .blog-header p{
+    color:var(--soft-ink); max-width:560px; margin:0 auto;
+    font-size:17px;
+  }
+  .blog-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:28px;
+    margin-bottom:50px;
+  }
+  @media(max-width:880px){.blog-grid{grid-template-columns:1fr}}
+  .blog-card{
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:
+      0 2px 0 rgba(43,29,13,.08),
+      0 20px 40px rgba(43,29,13,.12);
+    transition:transform .3s ease, box-shadow .3s ease;
+    text-decoration:none;
+    color:inherit;
+    display:flex; flex-direction:column;
+  }
+  .blog-card:hover{
+    transform:translateY(-6px);
+    box-shadow:
+      0 2px 0 rgba(43,29,13,.08),
+      0 28px 50px rgba(43,29,13,.2);
+  }
+  .blog-card-img{
+    width:100%;
+    aspect-ratio:16/10;
+    object-fit:cover;
+    display:block;
+    background:var(--cream);
+  }
+  .blog-card-body{
+    padding:22px 24px 26px;
+    display:flex; flex-direction:column;
+    flex:1;
+  }
+  .blog-card-date{
+    font-size:11px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--ember); font-weight:800;
+    margin-bottom:10px;
+  }
+  .blog-card-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:24px;
+    line-height:1.2;
+    color:var(--ink);
+    margin-bottom:10px;
+  }
+  .blog-card-excerpt{
+    font-family:'Nunito',system-ui,sans-serif;
+    font-size:15px;
+    color:var(--soft-ink);
+    line-height:1.55;
+    flex:1;
+  }
+  .blog-cta-row{text-align:center}
+
   /* ============ FOOTER ============ */
   footer{
     background:var(--night-deep);
@@ -600,6 +687,7 @@
   <div class="nav-actions">
     <a href="#journey" class="nav-pill">The Stories</a>
     <a href="#coloring" class="nav-pill">Coloring</a>
+    <a href="https://blog.mrmythcollection.com" class="nav-pill" target="_blank" rel="noopener">Blog</a>
     <a class="nav-pill cta" href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">Buy →</a>
   </div>
 </header>
@@ -849,6 +937,23 @@
   </div>
 </section>
 
+<!-- ============ BLOG ============ -->
+<section class="blog" id="blog" hidden>
+  <div class="blog-inner">
+    <div class="blog-header reveal">
+      <span class="blog-eyebrow">Stories beyond the book</span>
+      <h2>Latest from the <em>blog</em></h2>
+      <p>News, behind-the-scenes peeks, and reading ideas for parents.</p>
+    </div>
+    <div class="blog-grid reveal" id="blogGrid"></div>
+    <div class="blog-cta-row">
+      <a class="btn-gold" href="https://blog.mrmythcollection.com">
+        Read the blog →
+      </a>
+    </div>
+  </div>
+</section>
+
 <footer>
   <a href="#" class="brand" aria-label="Mr. Myth" style="pointer-events:none">
     <img src="images/logo-nav.png" alt="Mr. Myth" />
@@ -857,6 +962,7 @@
     <a href="#journey">The Stories</a>
     <a href="#coloring">Coloring</a>
     <a href="#buy">Buy</a>
+    <a href="https://blog.mrmythcollection.com" target="_blank" rel="noopener">Blog</a>
     <a href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">Amazon</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
@@ -869,7 +975,7 @@
     <a href="https://www.instagram.com/mrmythcollection/" target="_blank" rel="noopener" aria-label="Instagram — @mrmythcollection">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.58 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2zm0 2.16c-3.15 0-3.5 0-4.74.07-1.07.05-1.65.23-2.04.38-.51.2-.88.44-1.26.82-.38.38-.62.75-.82 1.26-.15.39-.33.97-.38 2.04C2.7 9.7 2.7 10.05 2.7 13.2s0 3.5.07 4.74c.05 1.07.23 1.65.38 2.04.2.51.44.88.82 1.26.38.38.75.62 1.26.82.39.15.97.33 2.04.38 1.24.07 1.59.07 4.74.07s3.5 0 4.74-.07c1.07-.05 1.65-.23 2.04-.38.51-.2.88-.44 1.26-.82.38-.38.62-.75.82-1.26.15-.39.33-.97.38-2.04.07-1.24.07-1.59.07-4.74s0-3.5-.07-4.74c-.05-1.07-.23-1.65-.38-2.04a3.4 3.4 0 0 0-.82-1.26 3.4 3.4 0 0 0-1.26-.82c-.39-.15-.97-.33-2.04-.38C15.5 4.36 15.15 4.36 12 4.36zm0 3.68a4.96 4.96 0 1 1 0 9.92 4.96 4.96 0 0 1 0-9.92zm0 8.18a3.22 3.22 0 1 0 0-6.44 3.22 3.22 0 0 0 0 6.44zm6.31-8.38a1.16 1.16 0 1 1-2.32 0 1.16 1.16 0 0 1 2.32 0z"/></svg>
     </a>
-    <a href="https://www.facebook.com/mrmythcollection" target="_blank" rel="noopener" aria-label="Facebook — @mrmythcollection">
+    <a href="https://www.facebook.com/share/14c2h8EcN5n/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook — @mrmythcollection">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg>
     </a>
   </div>
@@ -877,6 +983,47 @@
 </footer>
 
 <script>
+  (async function loadBlogPosts(){
+    const section = document.getElementById('blog');
+    const grid = document.getElementById('blogGrid');
+    if(!section || !grid) return;
+    const FALLBACK_IMG = 'images/cover.jpg';
+    const fmt = new Intl.DateTimeFormat('en-US', { year:'numeric', month:'long', day:'numeric' });
+    const stripHtml = (html)=>{
+      const tmp = document.createElement('div');
+      tmp.innerHTML = html || '';
+      return (tmp.textContent || tmp.innerText || '').trim().replace(/\s+/g,' ');
+    };
+    const truncate = (s, n)=> s.length > n ? s.slice(0, n).trimEnd() + '…' : s;
+    const escAttr = (s)=> String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    try {
+      const res = await fetch('https://blog.mrmythcollection.com/wp-json/wp/v2/posts?per_page=3&_embed');
+      if(!res.ok) return;
+      const posts = await res.json();
+      if(!Array.isArray(posts) || posts.length === 0) return;
+      grid.innerHTML = posts.map(p => {
+        const media = p._embedded && p._embedded['wp:featuredmedia'] && p._embedded['wp:featuredmedia'][0];
+        const img = (media && media.source_url) || FALLBACK_IMG;
+        const title = stripHtml(p.title && p.title.rendered) || 'Untitled';
+        const excerpt = truncate(stripHtml(p.excerpt && p.excerpt.rendered), 120);
+        const date = fmt.format(new Date(p.date));
+        return `
+          <a class="blog-card" href="${escAttr(p.link)}">
+            <img class="blog-card-img" src="${escAttr(img)}" alt="${escAttr(title)}" loading="lazy" onerror="this.src='${FALLBACK_IMG}'" />
+            <div class="blog-card-body">
+              <div class="blog-card-date">${escAttr(date)}</div>
+              <h3 class="blog-card-title">${escAttr(title)}</h3>
+              <p class="blog-card-excerpt">${escAttr(excerpt)}</p>
+            </div>
+          </a>
+        `;
+      }).join('');
+      section.hidden = false;
+    } catch(err) {
+      // fail silently — section stays hidden
+    }
+  })();
+
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
