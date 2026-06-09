@@ -149,11 +149,37 @@
     font-family:'Cormorant Garamond',serif;
     font-size:24px; font-style:italic; color:var(--ember); line-height:1.4;
   }
-  .article .figure{margin:34px 0}
-  .article .figure img{border-radius:14px; box-shadow:0 18px 40px rgba(43,29,13,.16)}
-  .article .figure figcaption{
+  .article .figure,
+  .article figure,
+  .article .wp-block-image{margin:34px 0}
+  .article .figure img,
+  .article figure img,
+  .article .wp-block-image img{border-radius:14px; box-shadow:0 18px 40px rgba(43,29,13,.16); width:100%; height:auto}
+  .article .figure figcaption,
+  .article figure figcaption,
+  .article .wp-block-image figcaption{
     text-align:center; font-size:13px; color:var(--soft-ink);
     margin-top:10px; font-style:italic;
+  }
+  /* WordPress content compatibility */
+  .article h3{
+    font-family:'Cormorant Garamond',serif; font-weight:600;
+    font-size:clamp(22px,2.6vw,28px); color:var(--ink);
+    margin:32px 0 12px; line-height:1.15;
+  }
+  .article a{color:var(--ember); font-weight:700; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px}
+  .article a:hover{color:var(--gold)}
+  .article strong{color:var(--ink); font-weight:800}
+  .article em{font-style:italic}
+  .article ol{margin:0 0 24px 26px}
+  .article ol li{font-size:18px; margin-bottom:10px}
+  .article hr{border:0; height:1px; background:rgba(43,29,13,.15); margin:48px auto; max-width:120px}
+  .article .wp-block-quote{margin:34px 0; padding:24px 30px; background:var(--cream); border-left:4px solid var(--gold); border-radius:0 14px 14px 0; font-family:'Cormorant Garamond',serif; font-size:24px; font-style:italic; color:var(--ember); line-height:1.4}
+  .article > p:first-of-type{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(22px,2.6vw,28px); line-height:1.45;
+    color:#2b3f6b; font-style:italic;
+    margin-bottom:36px;
   }
 
   /* AUTHOR / SHARE */
@@ -249,55 +275,30 @@
   </div>
 </header>
 
-<!-- ARTICLE HERO -->
+<!-- ARTICLE HERO — populated from WordPress REST API by slug -->
 <section class="article-hero">
   <div class="stars"></div>
   <div class="article-hero-inner">
     <a href="index.html" class="crumb">← Back to the Blog</a>
-    <div><span class="article-tag">Bedtime</span></div>
-    <h1>The Quiet Magic of Reading Aloud at Bedtime</h1>
-    <div class="article-meta">
-      <span>June 8, 2026</span><span class="dot"></span><span>5 min read</span><span class="dot"></span><span>By Mr. Myth Collection</span>
-    </div>
+    <div><span class="article-tag" id="postTag" hidden></span></div>
+    <h1 id="postTitle">Loading…</h1>
+    <div class="article-meta" id="postMeta"></div>
   </div>
 </section>
 
-<div class="cover-wrap">
-  <img src="../images/intro.jpg" alt="A calm bedtime scene under the clouds" />
+<div class="cover-wrap" id="postCoverWrap" hidden>
+  <img id="postCover" src="" alt="" />
 </div>
 
-<!-- ARTICLE -->
-<article class="article">
-  <p class="lede">High above the clouds and beyond the stars, the best part of a child's day is often the quietest one — the few minutes just before sleep, when a story is read aloud.</p>
-
-  <p>If bedtime in your home is sometimes a negotiation, you're in good company. But the simple act of reading aloud — even for ten unhurried minutes — is doing far more than passing the time. It's shaping the way your child thinks, feels, and falls asleep.</p>
-
-  <h2>More than words on a <em>page</em></h2>
-  <p>When you read aloud, your child hears language richer and more varied than everyday conversation. Picture books in particular are dense with rare words, rhythm, and the gentle music of a well-told sentence. Long before they can read themselves, children are quietly absorbing how stories work.</p>
-
-  <blockquote>“Wherever stories begin… Mr. Myth is always nearby.”</blockquote>
-
-  <p>There's a calming effect, too. A familiar voice, a predictable rhythm, and a story that always ends safely all signal to a small nervous system that the day is done and it's safe to let go.</p>
-
-  <h2>A simple bedtime ritual to try <em>tonight</em></h2>
-  <p>You don't need anything elaborate. A repeatable shape is what makes a ritual feel safe:</p>
-  <ul>
-    <li><strong>Dim the lights.</strong> Lower light tells the body it's nearly time to rest.</li>
-    <li><strong>Pick one story together.</strong> Letting your child choose gives them a small, satisfying sense of control.</li>
-    <li><strong>Read slowly.</strong> Pause on the pictures. Let them point, ask, and wonder.</li>
-    <li><strong>End the same way each night.</strong> A closing line your child can say along with you becomes a soft off-switch for the day.</li>
-  </ul>
-
-  <div class="figure">
-    <img src="../images/penguin.jpg" alt="Pip the penguin on the ice" />
-    <figcaption>Stories that travel — like Pip's first swim — give little readers a safe taste of being brave.</figcaption>
-  </div>
-
-  <h2>Let the story do the work</h2>
-  <p>Some nights you'll be tired, and that's fine. The magic isn't in a perfect performance — it's in showing up, night after night, with the same warm voice and the same gentle ending. That repetition is the gift. Over months and years, those ten minutes become some of the steadiest, safest moments of your child's whole day.</p>
-
-  <p>So tonight, dim the lights, find a friend like Leo or Ella or Pip, and read just one story. That's all it takes.</p>
+<!-- ARTICLE — body injected from WP post.content.rendered -->
+<article class="article" id="postBody">
+  <p style="text-align:center; color:var(--soft-ink);">Loading story…</p>
 </article>
+
+<div id="postError" hidden style="text-align:center; padding:80px 24px; color:var(--soft-ink);">
+  <p style="font-family:'Cormorant Garamond',serif; font-size:32px; color:var(--ink); margin-bottom:10px;">Story not found.</p>
+  <p>It may have been moved or unpublished. <a href="index.html" style="color:var(--ember); font-weight:700;">Back to the blog →</a></p>
+</div>
 
 <!-- FOOT: author + share -->
 <div class="article-foot">
@@ -309,9 +310,9 @@
     </div>
   </div>
   <div class="share">
-    <a href="#" aria-label="Share on Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg></a>
-    <a href="#" aria-label="Share on Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.58 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.58 2.2 15.2 2.2 12s0-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.2 8.8 2.2 12 2.2z"/></svg></a>
-    <a href="#" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M3.9 12a3.1 3.1 0 0 1 3.1-3.1h4V7h-4a5 5 0 0 0 0 10h4v-1.9h-4A3.1 3.1 0 0 1 3.9 12zm5.1 1h6v-2H9v2zm5-6h-4v1.9h4a3.1 3.1 0 0 1 0 6.2h-4V17h4a5 5 0 0 0 0-10z"/></svg></a>
+    <a id="shareFB" href="#" target="_blank" rel="noopener" aria-label="Share on Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg></a>
+    <a id="shareX" href="#" target="_blank" rel="noopener" aria-label="Share on X"><svg viewBox="0 0 24 24"><path d="M17.53 3H20.5l-6.49 7.41L21.75 21h-6.02l-4.71-6.16L5.6 21H2.63l6.94-7.93L2.25 3h6.17l4.26 5.63L17.53 3zm-1.05 16.2h1.65L7.6 4.7H5.84L16.48 19.2z"/></svg></a>
+    <a id="shareCopy" href="#" aria-label="Copy link"><svg viewBox="0 0 24 24"><path d="M3.9 12a3.1 3.1 0 0 1 3.1-3.1h4V7h-4a5 5 0 0 0 0 10h4v-1.9h-4A3.1 3.1 0 0 1 3.9 12zm5.1 1h6v-2H9v2zm5-6h-4v1.9h4a3.1 3.1 0 0 1 0 6.2h-4V17h4a5 5 0 0 0 0-10z"/></svg></a>
   </div>
 </div>
 
@@ -327,23 +328,10 @@
   </div>
 </div>
 
-<!-- RELATED -->
-<section class="related">
+<!-- RELATED — populated from WordPress (3 most recent excluding current) -->
+<section class="related" id="relatedSection" hidden>
   <h3>Keep <em>reading</em></h3>
-  <div class="rel-grid">
-    <a href="reading-aloud-at-bedtime.html" class="rel-card">
-      <img src="../images/lion.jpg" alt="Leo the lion" />
-      <div class="rb"><h4>Meet Leo: The Story Behind Our Brave Little Lion</h4><div class="rm">Behind the Book · 4 min</div></div>
-    </a>
-    <a href="reading-aloud-at-bedtime.html" class="rel-card">
-      <img src="../images/coloring_panda.jpg" alt="Coloring a panda" />
-      <div class="rb"><h4>Why Coloring Builds More Than Just Art Skills</h4><div class="rm">Coloring · 3 min</div></div>
-    </a>
-    <a href="reading-aloud-at-bedtime.html" class="rel-card">
-      <img src="../images/giraffe.jpg" alt="Gia the giraffe" />
-      <div class="rb"><h4>5 Calming Bedtime Rituals That Actually Work</h4><div class="rm">Bedtime · 5 min</div></div>
-    </a>
-  </div>
+  <div class="rel-grid" id="relatedGrid"></div>
 </section>
 
 <!-- FOOTER -->
@@ -362,6 +350,144 @@
   <span class="handle">Follow @mrmythcollection</span>
   <p>© 2026 Mr. Myth Collection. Wherever stories begin… Mr. Myth is always nearby.</p>
 </footer>
+
+<script>
+  // Headless WordPress: pulls Lucy's posts live. Update WP_API if WP moves.
+  const WP_API = 'https://blog.mrmythcollection.com/wp-json/wp/v2';
+  const FALLBACK_IMG = '../images/cover.jpg';
+  const fmt = new Intl.DateTimeFormat('en-US', { year:'numeric', month:'long', day:'numeric' });
+  const fmtShort = new Intl.DateTimeFormat('en-US', { month:'short', day:'numeric' });
+
+  function stripHtml(html){
+    const t = document.createElement('div');
+    t.innerHTML = html || '';
+    return (t.textContent || t.innerText || '').trim().replace(/\s+/g,' ');
+  }
+  function esc(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/"/g,'&quot;')
+      .replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  function readingMins(html){
+    const words = stripHtml(html).split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.round(words / 220));
+  }
+  function postImg(p){
+    const m = p._embedded && p._embedded['wp:featuredmedia'] && p._embedded['wp:featuredmedia'][0];
+    return (m && m.source_url) || '';
+  }
+  function postCategory(p){
+    const terms = p._embedded && p._embedded['wp:term'];
+    if(!terms) return '';
+    for(const group of terms){
+      for(const t of (group || [])){
+        if(t && t.taxonomy === 'category' && t.name && t.name.toLowerCase() !== 'uncategorized') return t.name;
+      }
+    }
+    return '';
+  }
+
+  function showError(){
+    document.getElementById('postTitle').textContent = 'Story not found';
+    document.querySelector('.article-hero').hidden = true;
+    document.getElementById('postBody').hidden = true;
+    document.getElementById('postError').hidden = false;
+  }
+
+  function renderPost(p){
+    const title = stripHtml(p.title.rendered);
+    document.title = title + ' — The Mr. Myth Blog';
+    document.getElementById('postTitle').textContent = title;
+
+    const cat = postCategory(p);
+    if(cat){
+      const tag = document.getElementById('postTag');
+      tag.textContent = cat;
+      tag.hidden = false;
+    }
+
+    document.getElementById('postMeta').innerHTML = `
+      <span>${esc(fmt.format(new Date(p.date)))}</span>
+      <span class="dot"></span><span>${readingMins(p.content && p.content.rendered)} min read</span>
+      <span class="dot"></span><span>By Mr. Myth Collection</span>
+    `;
+
+    const img = postImg(p);
+    if(img){
+      const wrap = document.getElementById('postCoverWrap');
+      document.getElementById('postCover').src = img;
+      document.getElementById('postCover').alt = title;
+      wrap.hidden = false;
+    }
+
+    // Inject WP content. WP returns sanitized HTML from its allowed-tag list.
+    document.getElementById('postBody').innerHTML = p.content.rendered;
+  }
+
+  function renderRelated(posts, currentId){
+    const others = posts.filter(p => p.id !== currentId).slice(0, 3);
+    if(others.length === 0) return;
+    document.getElementById('relatedGrid').innerHTML = others.map(p => {
+      const title = stripHtml(p.title.rendered);
+      const cat = postCategory(p);
+      const mins = readingMins(p.content && p.content.rendered);
+      const img = postImg(p) || FALLBACK_IMG;
+      return `
+        <a href="post.html?slug=${encodeURIComponent(p.slug)}" class="rel-card">
+          <img src="${esc(img)}" alt="${esc(title)}" loading="lazy" onerror="this.src='${FALLBACK_IMG}'" />
+          <div class="rb"><h4>${esc(title)}</h4><div class="rm">${cat ? esc(cat) + ' · ' : ''}${mins} min</div></div>
+        </a>
+      `;
+    }).join('');
+    document.getElementById('relatedSection').hidden = false;
+  }
+
+  function wireShare(title){
+    const url = window.location.href;
+    const t = encodeURIComponent(title);
+    const u = encodeURIComponent(url);
+    document.getElementById('shareFB').href = `https://www.facebook.com/sharer/sharer.php?u=${u}`;
+    document.getElementById('shareX').href = `https://twitter.com/intent/tweet?text=${t}&url=${u}`;
+    const copy = document.getElementById('shareCopy');
+    copy.addEventListener('click', async (e) => {
+      e.preventDefault();
+      try {
+        await navigator.clipboard.writeText(url);
+        const orig = copy.getAttribute('aria-label');
+        copy.setAttribute('aria-label','Link copied!');
+        copy.style.color = 'var(--ember)';
+        setTimeout(() => { copy.setAttribute('aria-label', orig); copy.style.color = ''; }, 1500);
+      } catch(err) {
+        window.prompt('Copy this link:', url);
+      }
+    });
+  }
+
+  (async function loadPost(){
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('slug');
+    if(!slug){ showError(); return; }
+    try {
+      const [postRes, recentRes] = await Promise.all([
+        fetch(`${WP_API}/posts?slug=${encodeURIComponent(slug)}&_embed`),
+        fetch(`${WP_API}/posts?per_page=4&_embed`)
+      ]);
+      if(!postRes.ok) throw new Error('post fetch failed');
+      const matches = await postRes.json();
+      if(!Array.isArray(matches) || matches.length === 0){ showError(); return; }
+      const post = matches[0];
+      renderPost(post);
+      wireShare(stripHtml(post.title.rendered));
+      if(recentRes.ok){
+        const recent = await recentRes.json();
+        if(Array.isArray(recent)) renderRelated(recent, post.id);
+      }
+    } catch(err) {
+      console.error('Post load failed:', err);
+      showError();
+    }
+  })();
+</script>
 
 </body>
 </html>

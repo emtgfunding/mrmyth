@@ -1033,8 +1033,9 @@
         const title = stripHtml(p.title && p.title.rendered) || 'Untitled';
         const excerpt = truncate(stripHtml(p.excerpt && p.excerpt.rendered), 120);
         const date = fmt.format(new Date(p.date));
+        const href = '/blog/post.html?slug=' + encodeURIComponent(p.slug);
         return `
-          <a class="blog-card" href="${escAttr(p.link)}">
+          <a class="blog-card" href="${escAttr(href)}">
             <img class="blog-card-img" src="${escAttr(img)}" alt="${escAttr(title)}" loading="lazy" onerror="this.src='${FALLBACK_IMG}'" />
             <div class="blog-card-body">
               <div class="blog-card-date">${escAttr(date)}</div>

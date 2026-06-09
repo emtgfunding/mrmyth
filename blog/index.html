@@ -371,80 +371,20 @@
 
 <div class="blog-wrap">
 
-  <!-- FEATURED -->
-  <article class="featured">
-    <div class="featured-img"><img src="../images/intro.jpg" alt="Reading under the stars" /></div>
-    <div class="featured-body">
-      <span class="featured-tag">★ Featured</span>
-      <h2>The Quiet Magic of Reading Aloud at Bedtime</h2>
-      <p>Just ten minutes of shared story before sleep does more than soothe — it builds language, calm, and connection. Here's the gentle science, and a simple ritual to try tonight.</p>
-      <div class="featured-meta">
-        <span>June 8, 2026</span><span class="dot"></span><span>5 min read</span><span class="dot"></span><span>Bedtime</span>
-      </div>
-      <a href="reading-aloud-at-bedtime.html" class="read-link">Read the story →</a>
-    </div>
-  </article>
+  <!-- FEATURED — populated from WordPress REST API -->
+  <article class="featured" id="featuredPost" hidden></article>
 
   <h2 class="grid-title">Latest from <em>the world of Mr. Myth</em></h2>
   <p class="grid-sub">Fresh every day — written for parents, loved by little ones.</p>
 
-  <!-- GRID -->
-  <div class="posts-grid">
+  <!-- GRID — populated from WordPress REST API -->
+  <div class="posts-grid" id="postsGrid">
+    <p style="grid-column:1/-1; text-align:center; color:var(--soft-ink); padding:40px 0;">Loading stories…</p>
+  </div>
 
-    <a href="reading-aloud-at-bedtime.html" class="post-card">
-      <div class="thumb"><img src="../images/lion.jpg" alt="Leo the Lion"><span class="pill">Behind the Book</span></div>
-      <div class="card-body">
-        <h3>Meet Leo: The Story Behind Our Brave Little Lion</h3>
-        <p class="excerpt">Every animal in the book carries a tiny lesson. Here's where Leo's courage came from — and how to talk about brave feelings with your child.</p>
-        <div class="meta"><span>June 7</span><span class="dot"></span><span>4 min</span><span class="arrow">→</span></div>
-      </div>
-    </a>
-
-    <a href="reading-aloud-at-bedtime.html" class="post-card">
-      <div class="thumb"><img src="../images/coloring_panda.jpg" alt="Coloring a panda"><span class="pill">Coloring</span></div>
-      <div class="card-body">
-        <h3>Why Coloring Builds More Than Just Art Skills</h3>
-        <p class="excerpt">Fine motor control, focus, patience, and pride — the humble crayon is quietly doing a lot. Plus three ways to make coloring time count.</p>
-        <div class="meta"><span>June 6</span><span class="dot"></span><span>3 min</span><span class="arrow">→</span></div>
-      </div>
-    </a>
-
-    <a href="reading-aloud-at-bedtime.html" class="post-card">
-      <div class="thumb"><img src="../images/penguin.jpg" alt="Pip the Penguin"><span class="pill">Reading Tips</span></div>
-      <div class="card-body">
-        <h3>Raising a Confident Reader, One Page at a Time</h3>
-        <p class="excerpt">Confidence on the page starts long before the first word is read. Small, repeatable habits that help little readers feel capable and brave.</p>
-        <div class="meta"><span>June 5</span><span class="dot"></span><span>6 min</span><span class="arrow">→</span></div>
-      </div>
-    </a>
-
-    <a href="reading-aloud-at-bedtime.html" class="post-card">
-      <div class="thumb"><img src="../images/elephant.jpg" alt="Ella the Elephant"><span class="pill">Parenting</span></div>
-      <div class="card-body">
-        <h3>“I'm Too Big”: Helping Kids Love What Makes Them Different</h3>
-        <p class="excerpt">Ella the elephant felt too big to fit in. A short guide to turning a child's self-doubt into self-celebration, inspired by the gentle giant of the river.</p>
-        <div class="meta"><span>June 4</span><span class="dot"></span><span>4 min</span><span class="arrow">→</span></div>
-      </div>
-    </a>
-
-    <a href="reading-aloud-at-bedtime.html" class="post-card">
-      <div class="thumb"><img src="../images/giraffe.jpg" alt="Gia the Giraffe"><span class="pill">Bedtime</span></div>
-      <div class="card-body">
-        <h3>5 Calming Bedtime Rituals That Actually Work</h3>
-        <p class="excerpt">Dimmed lights, a steady voice, a familiar friend. Build a wind-down routine your toddler will look forward to — and that gives you the evening back.</p>
-        <div class="meta"><span>June 3</span><span class="dot"></span><span>5 min</span><span class="arrow">→</span></div>
-      </div>
-    </a>
-
-    <a href="reading-aloud-at-bedtime.html" class="post-card">
-      <div class="thumb"><img src="../images/tiger.jpg" alt="Taro the Tiger"><span class="pill">Reading Tips</span></div>
-      <div class="card-body">
-        <h3>Traveling the World Through Picture Books</h3>
-        <p class="excerpt">From savanna to glacier in a single sitting. How stories set in faraway places grow empathy, curiosity, and a little adventurer's heart.</p>
-        <div class="meta"><span>June 2</span><span class="dot"></span><span>4 min</span><span class="arrow">→</span></div>
-      </div>
-    </a>
-
+  <div id="blogEmpty" hidden style="text-align:center; padding:60px 20px; color:var(--soft-ink);">
+    <p style="font-family:'Cormorant Garamond',serif; font-size:24px; color:var(--ink); margin-bottom:8px;">No posts yet.</p>
+    <p>Lucy is busy writing — check back tomorrow.</p>
   </div>
 </div>
 
@@ -481,6 +421,146 @@
   <span class="handle">Follow @mrmythcollection</span>
   <p>© 2026 Mr. Myth Collection. Wherever stories begin… Mr. Myth is always nearby.</p>
 </footer>
+
+<script>
+  // Headless WordPress: pulls Lucy's posts live from blog.mrmythcollection.com.
+  // When WP moves to cms.mrmythcollection.com, change WP_API below.
+  const WP_API = 'https://blog.mrmythcollection.com/wp-json/wp/v2';
+  const FALLBACK_IMG = '../images/cover.jpg';
+  const fmtFull = new Intl.DateTimeFormat('en-US', { year:'numeric', month:'long', day:'numeric' });
+  const fmtShort = new Intl.DateTimeFormat('en-US', { month:'short', day:'numeric' });
+
+  function stripHtml(html){
+    const t = document.createElement('div');
+    t.innerHTML = html || '';
+    return (t.textContent || t.innerText || '').trim().replace(/\s+/g,' ');
+  }
+  function truncate(s, n){ return s.length > n ? s.slice(0, n).trimEnd() + '…' : s; }
+  function esc(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/"/g,'&quot;')
+      .replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+  function readingMins(html){
+    const words = stripHtml(html).split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.round(words / 220));
+  }
+  function postImg(p){
+    const m = p._embedded && p._embedded['wp:featuredmedia'] && p._embedded['wp:featuredmedia'][0];
+    return (m && m.source_url) || FALLBACK_IMG;
+  }
+  function postCategory(p){
+    const terms = p._embedded && p._embedded['wp:term'];
+    if(!terms) return '';
+    for(const group of terms){
+      for(const t of (group || [])){
+        if(t && t.taxonomy === 'category' && t.name && t.name.toLowerCase() !== 'uncategorized') return t.name;
+      }
+    }
+    return '';
+  }
+  function postUrl(p){ return 'post.html?slug=' + encodeURIComponent(p.slug); }
+
+  function renderFeatured(p){
+    const el = document.getElementById('featuredPost');
+    const cat = postCategory(p);
+    const excerpt = truncate(stripHtml(p.excerpt && p.excerpt.rendered), 180);
+    el.innerHTML = `
+      <div class="featured-img"><img src="${esc(postImg(p))}" alt="${esc(stripHtml(p.title.rendered))}" /></div>
+      <div class="featured-body">
+        <span class="featured-tag">★ Featured</span>
+        <h2>${esc(stripHtml(p.title.rendered))}</h2>
+        <p>${esc(excerpt)}</p>
+        <div class="featured-meta">
+          <span>${esc(fmtFull.format(new Date(p.date)))}</span>
+          <span class="dot"></span><span>${readingMins(p.content && p.content.rendered)} min read</span>
+          ${cat ? `<span class="dot"></span><span>${esc(cat)}</span>` : ''}
+        </div>
+        <a href="${esc(postUrl(p))}" class="read-link">Read the story →</a>
+      </div>
+    `;
+    el.hidden = false;
+  }
+
+  function renderGrid(posts){
+    const grid = document.getElementById('postsGrid');
+    grid.innerHTML = posts.map(p => {
+      const cat = postCategory(p);
+      const excerpt = truncate(stripHtml(p.excerpt && p.excerpt.rendered), 140);
+      const title = stripHtml(p.title.rendered);
+      return `
+        <a href="${esc(postUrl(p))}" class="post-card">
+          <div class="thumb">
+            <img src="${esc(postImg(p))}" alt="${esc(title)}" loading="lazy" onerror="this.src='${FALLBACK_IMG}'" />
+            ${cat ? `<span class="pill">${esc(cat)}</span>` : ''}
+          </div>
+          <div class="card-body">
+            <h3>${esc(title)}</h3>
+            <p class="excerpt">${esc(excerpt)}</p>
+            <div class="meta">
+              <span>${esc(fmtShort.format(new Date(p.date)))}</span>
+              <span class="dot"></span><span>${readingMins(p.content && p.content.rendered)} min</span>
+              <span class="arrow">→</span>
+            </div>
+          </div>
+        </a>
+      `;
+    }).join('');
+  }
+
+  let allPosts = [];
+  let activeCategory = 'all';
+
+  function applyFilter(){
+    if(allPosts.length === 0) return;
+    const filtered = activeCategory === 'all'
+      ? allPosts
+      : allPosts.filter(p => postCategory(p).toLowerCase() === activeCategory.toLowerCase());
+    if(filtered.length === 0){
+      document.getElementById('featuredPost').hidden = true;
+      document.getElementById('postsGrid').innerHTML = `<p style="grid-column:1/-1; text-align:center; color:var(--soft-ink); padding:40px 0;">No posts in this category yet.</p>`;
+      return;
+    }
+    renderFeatured(filtered[0]);
+    renderGrid(filtered.slice(1));
+  }
+
+  function wireCategoryFilter(){
+    document.querySelectorAll('.cat-chip').forEach(chip => {
+      chip.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelectorAll('.cat-chip').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeCategory = chip.textContent.trim();
+        applyFilter();
+        document.querySelector('.posts-grid').scrollIntoView({behavior:'smooth', block:'start'});
+      });
+    });
+  }
+
+  (async function loadPosts(){
+    const grid = document.getElementById('postsGrid');
+    const empty = document.getElementById('blogEmpty');
+    try {
+      const res = await fetch(`${WP_API}/posts?per_page=20&_embed`);
+      if(!res.ok) throw new Error('bad response ' + res.status);
+      const posts = await res.json();
+      if(!Array.isArray(posts) || posts.length === 0){
+        grid.hidden = true;
+        empty.hidden = false;
+        return;
+      }
+      allPosts = posts;
+      renderFeatured(posts[0]);
+      renderGrid(posts.slice(1));
+      wireCategoryFilter();
+    } catch(err){
+      console.error('Blog fetch failed:', err);
+      grid.hidden = true;
+      empty.hidden = false;
+    }
+  })();
+</script>
 
 </body>
 </html>
