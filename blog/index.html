@@ -74,9 +74,61 @@
   .nav-pill:hover{background:var(--gold); color:var(--night)}
   .nav-pill.cta{background:var(--gold); color:var(--night); border-color:var(--gold)}
   .nav-pill.cta:hover{background:var(--gold-bright)}
+  .nav-toggle{
+    display:none;
+    background:rgba(14,18,57,.55);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border:1px solid rgba(255,213,106,.25);
+    color:var(--cream);
+    width:42px; height:42px;
+    border-radius:50%;
+    cursor:pointer;
+    align-items:center; justify-content:center;
+    padding:0;
+  }
+  .nav-toggle svg{width:20px; height:20px; fill:currentColor; display:block}
+  .mobile-menu{
+    position:fixed; inset:0;
+    background:rgba(7,9,38,.96);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    z-index:150;
+    display:none;
+    flex-direction:column;
+    align-items:center; justify-content:center;
+    gap:16px;
+    padding:80px 24px 40px;
+  }
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{
+    color:var(--cream);
+    font-family:'Nunito',system-ui,sans-serif;
+    font-weight:800; font-size:16px;
+    letter-spacing:2px; text-transform:uppercase;
+    text-decoration:none;
+    padding:14px 22px;
+    border-radius:999px;
+    border:1px solid rgba(255,213,106,.25);
+    transition:background .2s, color .2s, border-color .2s;
+    min-width:240px; text-align:center;
+  }
+  .mobile-menu a:hover, .mobile-menu a.cta{
+    background:var(--gold); color:var(--night-deep); border-color:var(--gold);
+  }
+  .mobile-menu .close-x{
+    position:absolute; top:24px; right:24px;
+    background:none; border:none; color:var(--cream);
+    cursor:pointer; padding:8px;
+    border-radius:50%;
+    transition:background .2s;
+  }
+  .mobile-menu .close-x:hover{background:rgba(255,213,106,.15)}
+  .mobile-menu .close-x svg{width:24px; height:24px; fill:currentColor; display:block}
   @media(max-width:680px){
     .topbar{padding:14px 18px}
-    .nav-pill:not(.cta){display:none}
+    .nav-actions .nav-pill:not(.cta){display:none}
+    .nav-toggle{display:inline-flex}
   }
 
   /* ============ STARS BG ============ */
@@ -346,8 +398,22 @@
     <a href="../index.html#coloring" class="nav-pill">Coloring</a>
     <a href="index.html" class="nav-pill">Blog</a>
     <a class="nav-pill cta" href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">Buy →</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+    </button>
   </div>
 </header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu" aria-modal="true">
+  <button class="close-x" id="mobileClose" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71 12 12.01l-6.3-6.3-1.41 1.41L10.59 13.4l-6.3 6.3 1.41 1.41 6.3-6.3 6.3 6.3 1.41-1.41-6.3-6.3 6.3-6.3z"/></svg>
+  </button>
+  <a href="../index.html#journey">The Stories</a>
+  <a href="../index.html#coloring">Coloring</a>
+  <a href="index.html">Blog</a>
+  <a class="cta" href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">Buy on Amazon</a>
+  <a href="https://www.barnesandnoble.com/w/mr-myth-animals-of-the-world-mr-myth/1150339600?ean=9798258409799" target="_blank" rel="noopener">Barnes &amp; Noble</a>
+</div>
 
 <!-- BLOG HERO -->
 <section class="blog-hero">
@@ -423,6 +489,19 @@
 </footer>
 
 <script>
+  (function navMenu(){
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('mobileMenu');
+    const close = document.getElementById('mobileClose');
+    if(!toggle || !menu) return;
+    function open(){ menu.classList.add('open'); toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    function shut(){ menu.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    toggle.addEventListener('click', open);
+    close.addEventListener('click', shut);
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', shut));
+    document.addEventListener('keydown', e => { if(e.key==='Escape' && menu.classList.contains('open')) shut(); });
+  })();
+
   // Headless WordPress: pulls Lucy's posts live from blog.mrmythcollection.com.
   // When WP moves to cms.mrmythcollection.com, change WP_API below.
   const WP_API = 'https://blog.mrmythcollection.com/wp-json/wp/v2';
