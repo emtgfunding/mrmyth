@@ -198,6 +198,23 @@
     padding:18px 4px;
     border-bottom:2px solid var(--gold);
   }
+  .btn-outline-gold{
+    display:inline-flex; align-items:center; gap:10px;
+    background:transparent;
+    color:var(--gold-bright);
+    padding:16px 30px;
+    border-radius:999px;
+    font-weight:800; font-size:15px; letter-spacing:1px; text-transform:uppercase;
+    text-decoration:none;
+    border:2px solid var(--gold);
+    transition:background .2s, color .2s, transform .2s, box-shadow .2s;
+  }
+  .btn-outline-gold:hover{
+    background:var(--gold);
+    color:var(--night-deep);
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(255,213,106,.3);
+  }
 
   /* hero cover */
   .hero-cover{
@@ -718,6 +735,9 @@
         <a class="btn-gold" href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">
           Buy on Amazon · $19.99
         </a>
+        <a class="btn-outline-gold" href="https://www.barnesandnoble.com/w/mr-myth-animals-of-the-world-mr-myth/1150339600?ean=9798258409799" target="_blank" rel="noopener">
+          Barnes &amp; Noble
+        </a>
         <a class="btn-ghost-light" href="#journey">Peek inside ↓</a>
       </div>
     </div>
@@ -930,9 +950,14 @@
         <span class="note">USD · Free delivery · In stock now</span>
       </div>
 
-      <a class="btn-gold" href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">
-        Get the book →
-      </a>
+      <div class="hero-cta-row">
+        <a class="btn-gold" href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">
+          Get on Amazon →
+        </a>
+        <a class="btn-outline-gold" href="https://www.barnesandnoble.com/w/mr-myth-animals-of-the-world-mr-myth/1150339600?ean=9798258409799" target="_blank" rel="noopener">
+          Barnes &amp; Noble →
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -964,6 +989,7 @@
     <a href="#buy">Buy</a>
     <a href="https://blog.mrmythcollection.com" target="_blank" rel="noopener">Blog</a>
     <a href="https://www.amazon.com/-/en/Mr-Myth-Collection/dp/B0H2DHSHDG/" target="_blank" rel="noopener">Amazon</a>
+    <a href="https://www.barnesandnoble.com/w/mr-myth-animals-of-the-world-mr-myth/1150339600?ean=9798258409799" target="_blank" rel="noopener">Barnes &amp; Noble</a>
     <a href="privacy.html">Privacy</a>
     <a href="terms.html">Terms</a>
   </div>

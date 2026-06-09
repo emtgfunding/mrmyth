@@ -1,0 +1,238 @@
+/* ============================================================
+   Mr. Myth Blog — WordPress brand theme
+   Paste into: WordPress Admin → Appearance → Editor (or Customize)
+   → Additional CSS, on a clean block theme (e.g. Twenty Twenty-Five).
+   This is a starting point matching blog-preview.html; we'll fine-tune
+   selectors against your live theme once WordPress is installed.
+   ============================================================ */
+
+:root{
+  --night:#0e1239;
+  --night-deep:#070926;
+  --gold:#e8b54a;
+  --gold-bright:#ffd56a;
+  --cream:#f8efd9;
+  --paper:#fbf5e4;
+  --ember:#d97640;
+  --ink:#2b1d0d;
+  --soft-ink:#5a4632;
+  --jungle:#1f4d36;
+  --ice:#cfe5f0;
+  --ice-deep:#2a4c6e;
+  --rose:#e8b3a4;
+}
+
+/* ---- Fonts (load via Customize → add to <head>, or a fonts plugin) ----
+   Cormorant Garamond (headings), Nunito (body) — same as the main site. */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+/* ---- Base ---- */
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Nunito', system-ui, sans-serif;
+  line-height:1.55;
+}
+
+img{display:block; max-width:100%; height:auto}
+
+h1,h2,h3,h4,
+.wp-block-post-title,
+.wp-block-heading{
+  font-family:'Cormorant Garamond', serif !important;
+  color:var(--ink);
+  line-height:1.05;
+  font-weight:600;
+  letter-spacing:-.01em;
+}
+
+/* ---- H2 with <em> gold accent (matches main site pattern) ---- */
+h1 em, h2 em, h3 em,
+.wp-block-heading em,
+.wp-block-post-title em{
+  color:var(--ember) !important;
+  font-style:italic;
+}
+
+a{ color:var(--ember); }
+a:hover{ color:var(--gold); }
+
+/* ---- Post title / article hero ---- */
+.wp-block-post-title{
+  font-size:clamp(34px,5vw,58px);
+}
+
+/* ---- Body copy in posts ---- */
+.entry-content p,
+.wp-block-post-content p{
+  font-size:18px;
+  margin-bottom:1.2em;
+}
+
+/* ---- Lede / first paragraph feel ---- */
+.wp-block-post-content > p:first-of-type{
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:clamp(20px,2.4vw,26px);
+  color:#2b3f6b;
+}
+
+/* ---- Blockquotes ---- */
+blockquote, .wp-block-quote{
+  background:var(--cream);
+  border-left:4px solid var(--gold);
+  border-radius:0 14px 14px 0;
+  padding:22px 28px;
+  font-family:'Cormorant Garamond', serif;
+  font-style:italic;
+  font-size:23px;
+  color:var(--ember);
+}
+
+/* ---- Buttons / CTAs (match main site .btn-gold) ---- */
+.wp-block-button__link,
+.wp-element-button,
+button, input[type="submit"]{
+  background:var(--gold) !important;
+  color:var(--night-deep) !important;
+  border:none !important;
+  border-radius:999px !important;
+  font-family:'Nunito', system-ui, sans-serif !important;
+  font-weight:800 !important;
+  font-size:15px !important;
+  letter-spacing:1px !important;
+  text-transform:uppercase !important;
+  padding:18px 32px !important;
+  box-shadow:
+    0 10px 40px rgba(255,213,106,.35),
+    0 0 0 1px rgba(255,213,106,.4) !important;
+  transition:transform .2s, box-shadow .2s !important;
+  text-decoration:none !important;
+}
+.wp-block-button__link:hover,
+.wp-element-button:hover,
+button:hover, input[type="submit"]:hover{
+  background:var(--gold-bright) !important;
+  transform:translateY(-3px) !important;
+  box-shadow:
+    0 18px 50px rgba(255,213,106,.5),
+    0 0 0 1px var(--gold-bright) !important;
+}
+
+/* ---- Category / tag pills ---- */
+.wp-block-post-terms a,
+.post-categories a{
+  display:inline-block;
+  background:rgba(14,18,57,.9);
+  color:var(--gold-bright);
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,213,106,.4);
+  font-size:11px; letter-spacing:2px; text-transform:uppercase; font-weight:800;
+  text-decoration:none;
+}
+
+/* ---- Post cards on the blog index (block theme query loop) ---- */
+.wp-block-post{
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.5);
+  box-shadow:
+    0 2px 0 rgba(43,29,13,.1),
+    0 20px 40px rgba(43,29,13,.12);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.wp-block-post:hover{
+  transform:translateY(-6px);
+  box-shadow:
+    0 2px 0 rgba(43,29,13,.1),
+    0 28px 50px rgba(43,29,13,.2);
+}
+.wp-block-post-featured-image img{ border-radius:0; }
+
+/* ---- Eyebrow / kicker text (post date, meta, "Latest from the blog" style) ---- */
+.wp-block-post-date,
+.wp-block-post-author-name,
+.entry-meta,
+.eyebrow{
+  display:inline-block;
+  font-family:'Nunito', system-ui, sans-serif;
+  font-size:12px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:var(--ember);
+  font-weight:800;
+}
+
+/* ---- Site header (nav) — match main site pill style ---- */
+.wp-block-site-title a{
+  font-family:'Cormorant Garamond', serif;
+  font-weight:600;
+  font-size:22px;
+  color:var(--night) !important;
+  text-decoration:none;
+}
+.wp-block-navigation a{
+  display:inline-block;
+  color:var(--ink) !important;
+  font-family:'Nunito', system-ui, sans-serif;
+  font-weight:700;
+  font-size:13px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  padding:10px 18px;
+  border-radius:999px;
+  border:1px solid rgba(43,29,13,.15);
+  text-decoration:none;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.wp-block-navigation a:hover{
+  background:var(--gold);
+  color:var(--night-deep) !important;
+  border-color:var(--gold);
+}
+
+/* ---- Footer ---- */
+.wp-block-template-part footer,
+.is-style-footer{
+  background:var(--night-deep);
+  color:rgba(248,239,217,.6);
+  border-top:1px solid rgba(255,213,106,.15);
+  padding:40px 32px;
+  text-align:center;
+  font-size:13px;
+}
+.wp-block-template-part footer a{ color:var(--cream); text-decoration:none; font-weight:700; }
+.wp-block-template-part footer a:hover{ color:var(--gold-bright); }
+
+/* ---- Footer social icons (apply class .social-circle to social link blocks) ---- */
+.wp-block-social-link,
+.social-circle{
+  display:inline-flex !important;
+  align-items:center; justify-content:center;
+  width:40px !important; height:40px !important;
+  border-radius:50% !important;
+  background:rgba(255,213,106,.08) !important;
+  border:1px solid rgba(255,213,106,.25) !important;
+  color:var(--cream) !important;
+  transition:background .2s, color .2s, transform .2s, border-color .2s !important;
+}
+.wp-block-social-link:hover,
+.social-circle:hover{
+  background:var(--gold) !important;
+  color:var(--night-deep) !important;
+  border-color:var(--gold) !important;
+  transform:translateY(-2px) !important;
+}
+
+/* ---- Dark "hero" section helper (apply to a Group block) ---- */
+.is-style-night-hero{
+  background:
+    radial-gradient(ellipse 1000px 600px at 30% 20%, #2a3270 0%, transparent 60%),
+    linear-gradient(180deg, var(--night-deep) 0%, #1a1a48 100%);
+  color:var(--cream);
+}
+.is-style-night-hero h1,
+.is-style-night-hero h2{ color:var(--cream) !important; }
+.is-style-night-hero em{ color:var(--gold-bright); font-style:italic; }
