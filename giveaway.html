@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Win a Free Copy — Mr. Myth Giveaway</title>
+<meta name="description" content="Enter the Mr. Myth giveaway for a chance to win a free copy of Animals of the World plus exclusive coloring printables. Join the Adventure Club to enter." />
+<link rel="icon" type="image/png" href="images/favicon.png" />
+<link rel="apple-touch-icon" href="images/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --night:#0e1239; --night-deep:#070926;
+    --gold:#e8b54a; --gold-bright:#ffd56a;
+    --cream:#f8efd9; --paper:#fbf5e4; --ember:#d97640;
+    --ink:#2b1d0d; --soft-ink:#5a4632;
+  }
+  *{box-sizing:border-box; margin:0; padding:0}
+  html,body{overflow-x:hidden}
+  html{scroll-behavior:smooth}
+  body{font-family:'Nunito',system-ui,sans-serif; color:var(--ink); background:var(--paper); line-height:1.6}
+  img{display:block; max-width:100%; height:auto}
+  a{color:inherit}
+
+  /* NAV */
+  .topbar{position:fixed; top:0; left:0; right:0; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:18px 32px; pointer-events:none}
+  .topbar > *{pointer-events:auto}
+  .brand{display:inline-flex; align-items:center; gap:10px; background:rgba(14,18,57,.55); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); padding:6px 14px; border-radius:999px; border:1px solid rgba(255,213,106,.25); text-decoration:none; transition:background .2s}
+  .brand:hover{background:rgba(14,18,57,.75)}
+  .brand img{height:84px; width:auto; display:block}
+  .nav-actions{display:flex; gap:10px; align-items:center}
+  .nav-pill{background:rgba(14,18,57,.55); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); color:var(--cream); padding:10px 18px; border-radius:999px; border:1px solid rgba(255,213,106,.25); font-weight:700; font-size:13px; letter-spacing:.5px; text-transform:uppercase; text-decoration:none; transition:background .2s, color .2s}
+  .nav-pill:hover{background:var(--gold); color:var(--night)}
+  .nav-pill.cta{background:var(--gold); color:var(--night); border-color:var(--gold)}
+  .nav-toggle{display:none; background:rgba(14,18,57,.55); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border:1px solid rgba(255,213,106,.25); color:var(--cream); width:42px; height:42px; border-radius:50%; cursor:pointer; align-items:center; justify-content:center; padding:0}
+  .nav-toggle svg{width:20px; height:20px; fill:currentColor; display:block}
+  .mobile-menu{position:fixed; inset:0; background:rgba(7,9,38,.96); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); z-index:150; display:none; flex-direction:column; align-items:center; justify-content:center; gap:16px; padding:80px 24px 40px}
+  .mobile-menu.open{display:flex}
+  .mobile-menu a{color:var(--cream); font-weight:800; font-size:16px; letter-spacing:2px; text-transform:uppercase; text-decoration:none; padding:14px 22px; border-radius:999px; border:1px solid rgba(255,213,106,.25); transition:background .2s, color .2s, border-color .2s; min-width:240px; text-align:center}
+  .mobile-menu a:hover, .mobile-menu a.cta{background:var(--gold); color:var(--night-deep); border-color:var(--gold)}
+  .mobile-menu .close-x{position:absolute; top:24px; right:24px; background:none; border:none; color:var(--cream); cursor:pointer; padding:8px; border-radius:50%; transition:background .2s}
+  .mobile-menu .close-x:hover{background:rgba(255,213,106,.15)}
+  .mobile-menu .close-x svg{width:24px; height:24px; fill:currentColor; display:block}
+  @media(max-width:680px){.topbar{padding:14px 18px} .nav-actions .nav-pill:not(.cta){display:none} .nav-toggle{display:inline-flex}}
+
+  .stars{position:absolute; inset:0; background:
+    radial-gradient(1.5px 1.5px at 12% 18%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 25% 42%, #fff8d6 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 38% 12%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 52% 68%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 67% 28%, #fff8d6 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 78% 55%, #fff 50%, transparent 100%),
+    radial-gradient(1px 1px at 88% 78%, #fff 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 8% 78%, #fff8d6 50%, transparent 100%);
+    pointer-events:none; opacity:.7}
+
+  /* HERO */
+  .hero{position:relative; background:
+      radial-gradient(ellipse 1000px 600px at 30% 20%, #2a3270 0%, transparent 60%),
+      radial-gradient(ellipse 800px 500px at 80% 10%, #3a2a60 0%, transparent 60%),
+      linear-gradient(180deg, var(--night-deep) 0%, #1a1a48 100%);
+    color:var(--cream); text-align:center; padding:160px 24px 90px; overflow:hidden}
+  .hero-inner{position:relative; z-index:2; max-width:760px; margin:0 auto}
+  .eyebrow{display:inline-flex; align-items:center; gap:10px; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--gold-bright); font-weight:800; margin-bottom:22px}
+  .eyebrow::before, .eyebrow::after{content:""; width:30px; height:1px; background:var(--gold)}
+  .hero h1{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(44px,7vw,82px); line-height:1.0; margin-bottom:18px; color:var(--cream)}
+  .hero h1 em{color:var(--gold-bright); font-style:italic}
+  .hero p{font-family:'Cormorant Garamond',serif; font-size:clamp(18px,2.4vw,24px); font-style:italic; color:rgba(248,239,217,.85); max-width:560px; margin:0 auto}
+
+  /* PRIZE CARD */
+  .wrap{max-width:920px; margin:0 auto; padding:64px 24px 20px}
+  .prize{display:grid; grid-template-columns:auto 1fr; gap:34px; align-items:center; background:#fff; border-radius:22px; padding:40px; box-shadow:0 30px 70px rgba(43,29,13,.14); border:1px solid rgba(43,29,13,.06); margin-top:-56px; position:relative; z-index:5}
+  @media(max-width:620px){.prize{grid-template-columns:1fr; text-align:center; justify-items:center}}
+  .prize img{width:170px; border-radius:10px; box-shadow:0 24px 50px rgba(43,29,13,.3)}
+  .prize h2{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(28px,3.4vw,40px); color:var(--ink); margin-bottom:10px; line-height:1.1}
+  .prize h2 em{color:var(--ember); font-style:italic}
+  .prize p{color:var(--soft-ink); font-size:16px; margin-bottom:6px}
+  .prize .pills{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px}
+  .prize .pills span{font-size:12px; font-weight:800; color:var(--ember); background:var(--cream); border:1px solid rgba(217,118,64,.3); padding:6px 12px; border-radius:999px}
+
+  /* STEPS */
+  .steps{max-width:920px; margin:0 auto; padding:30px 24px}
+  .steps h3{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(26px,3vw,34px); color:var(--ink); text-align:center; margin-bottom:30px}
+  .steps h3 em{color:var(--ember); font-style:italic}
+  .step-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+  @media(max-width:720px){.step-grid{grid-template-columns:1fr}}
+  .step{background:#fff; border-radius:16px; padding:28px 24px; text-align:center; box-shadow:0 14px 34px rgba(43,29,13,.08); border:1px solid rgba(43,29,13,.05)}
+  .step .n{width:42px; height:42px; margin:0 auto 14px; border-radius:50%; background:var(--night); color:var(--gold-bright); display:flex; align-items:center; justify-content:center; font-family:'Cormorant Garamond',serif; font-weight:700; font-size:20px; border:1px solid rgba(255,213,106,.4)}
+  .step h4{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:21px; color:var(--ink); margin-bottom:6px}
+  .step p{font-size:14.5px; color:var(--soft-ink)}
+
+  /* CLUB / ENTRY FORM */
+  .news{max-width:920px; margin:30px auto 0; padding:0 24px}
+  .news-inner{position:relative; overflow:hidden; background:
+      radial-gradient(ellipse 600px 300px at 80% 0%, #3a2a60 0%, transparent 60%),
+      linear-gradient(180deg,var(--night) 0%, var(--night-deep) 100%);
+    border-radius:22px; padding:54px 44px; text-align:center; color:var(--cream); box-shadow:0 0 0 1px rgba(255,213,106,.18)}
+  .news-inner h3{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:clamp(28px,3.4vw,40px); margin-bottom:12px; color:#fff}
+  .news-inner h3 em{color:var(--gold-bright); font-style:italic}
+  .news-inner p{color:rgba(248,239,217,.75); max-width:480px; margin:0 auto 22px; font-size:15px}
+  .club-perks{list-style:none; margin:0 auto 26px; padding:0; display:flex; flex-wrap:wrap; gap:8px 10px; justify-content:center; max-width:560px}
+  .club-perks li{font-size:13px; font-weight:700; color:var(--cream); background:rgba(255,213,106,.12); border:1px solid rgba(255,213,106,.3); padding:7px 14px; border-radius:999px}
+  .club-perks li::before{content:"✦ "; color:var(--gold-bright)}
+  .news-form{display:flex; gap:10px; justify-content:center; flex-wrap:wrap}
+  .news-form input{border:none; border-radius:999px; padding:14px 22px; width:min(320px,80vw); font-family:'Nunito'; font-size:15px}
+  .news-form button{border:none; cursor:pointer; background:var(--gold); color:var(--night-deep); padding:14px 28px; border-radius:999px; font-weight:800; font-size:13px; letter-spacing:1px; text-transform:uppercase; transition:background .2s}
+  .news-form button:hover{background:var(--gold-bright)}
+  .club-note{margin-top:16px; font-weight:800; color:var(--gold-bright); font-size:14px}
+  .club-fine{margin-top:14px; font-size:12px; color:rgba(248,239,217,.5)}
+
+  .rules{max-width:760px; margin:40px auto 0; padding:0 24px; color:var(--soft-ink); font-size:13px; line-height:1.7; text-align:center}
+  .rules a{color:var(--ember); font-weight:700}
+
+  footer{background:var(--night-deep); color:rgba(248,239,217,.6); padding:50px 32px 40px; text-align:center; border-top:1px solid rgba(255,213,106,.15); font-size:13px; margin-top:70px}
+  footer .brand{margin:0 auto 16px; display:inline-flex; background:transparent; border:none; padding:0}
+  footer .brand img{height:60px}
+  footer .links{display:flex; gap:18px; justify-content:center; margin-bottom:14px; flex-wrap:wrap}
+  footer .links a{color:var(--cream); text-decoration:none; font-weight:700; font-size:13px}
+  footer .links a:hover{color:var(--gold-bright)}
+  footer .handle{display:block; font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-bright); font-weight:800; margin-bottom:14px}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="topbar">
+  <a href="index.html" class="brand" aria-label="Mr. Myth"><img src="images/logo-nav.png" alt="Mr. Myth" /></a>
+  <div class="nav-actions">
+    <a href="index.html#journey" class="nav-pill">The Stories</a>
+    <a href="index.html#coloring" class="nav-pill">Coloring</a>
+    <a href="blog/index.html" class="nav-pill">Blog</a>
+    <a class="nav-pill cta" href="https://www.amazon.com/dp/B0H5KP16HB/" target="_blank" rel="noopener">Buy →</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menu" aria-modal="true">
+  <button class="close-x" id="mobileClose" aria-label="Close menu">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.71 12 12.01l-6.3-6.3-1.41 1.41L10.59 13.4l-6.3 6.3 1.41 1.41 6.3-6.3 6.3 6.3 1.41-1.41-6.3-6.3 6.3-6.3z"/></svg>
+  </button>
+  <a href="index.html#journey">The Stories</a>
+  <a href="index.html#coloring">Coloring</a>
+  <a href="blog/index.html">Blog</a>
+  <a class="cta" href="https://www.amazon.com/dp/B0H5KP16HB/" target="_blank" rel="noopener">Buy on Amazon</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="stars"></div>
+  <div class="hero-inner">
+    <span class="eyebrow">Mr. Myth Giveaway</span>
+    <h1>Win a <em>free copy</em> of Animals of the World</h1>
+    <p>Enter for a chance to win the book — plus exclusive coloring printables for your little adventurer.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <!-- PRIZE -->
+  <div class="prize">
+    <img src="images/cover.jpg" alt="Mr. Myth — Animals of the World book cover" />
+    <div>
+      <h2>The <em>grand prize</em></h2>
+      <p>One winner receives a paperback copy of <strong>Mr. Myth: Animals of the World — A 2-in-1 Story &amp; Coloring Adventure</strong>, shipped free.</p>
+      <p>Every entrant also gets our printable animal coloring pack — just for joining.</p>
+      <div class="pills">
+        <span>1 free book</span>
+        <span>Free shipping</span>
+        <span>Bonus printables</span>
+        <span>Ages 2+</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEPS -->
+<section class="steps">
+  <h3>How to <em>enter</em></h3>
+  <div class="step-grid">
+    <div class="step"><div class="n">1</div><h4>Join the Club</h4><p>Drop your email below to join the Mr. Myth Adventure Club — that’s your entry.</p></div>
+    <div class="step"><div class="n">2</div><h4>Get your printables</h4><p>We’ll send your free coloring pack and animal fact sheets right away.</p></div>
+    <div class="step"><div class="n">3</div><h4>Watch your inbox</h4><p>We draw a winner each month and announce it by email. Good luck!</p></div>
+  </div>
+</section>
+
+<!-- ENTRY / CLUB FORM -->
+<section class="news" id="enter">
+  <div class="news-inner">
+    <div class="stars"></div>
+    <div style="position:relative; z-index:2">
+      <h3>Enter &amp; join the <em>Adventure Club</em></h3>
+      <p>One email enters you in the giveaway and unlocks all the free goodies below.</p>
+      <ul class="club-perks">
+        <li>Free family activities</li>
+        <li>Animal fact sheets</li>
+        <li>Coloring pages</li>
+        <li>New adventure updates</li>
+        <li>Exclusive giveaways</li>
+      </ul>
+      <form class="news-form" id="clubForm" data-endpoint="">
+        <input type="email" name="email" placeholder="your@email.com" aria-label="Email address" required />
+        <button type="submit">Enter free</button>
+      </form>
+      <p class="club-note" id="clubMsg" hidden></p>
+      <p class="club-fine">No spam, ever. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<p class="rules">
+  No purchase necessary. Open to entrants who join the Mr. Myth Adventure Club. One winner selected monthly and notified by email.
+  See our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a> for details.
+</p>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="brand" aria-label="Mr. Myth"><img src="images/logo-nav.png" alt="Mr. Myth" /></a>
+  <div class="links">
+    <a href="index.html#journey">The Stories</a>
+    <a href="index.html#coloring">Coloring</a>
+    <a href="index.html#buy">Buy</a>
+    <a href="blog/index.html">Blog</a>
+    <a href="https://www.amazon.com/dp/B0H5KP16HB/" target="_blank" rel="noopener">Amazon</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </div>
+  <span class="handle">Follow @mrmythcollection</span>
+  <p>© 2026 Mr. Myth Collection. Wherever stories begin… Mr. Myth is always nearby.</p>
+</footer>
+
+<script>
+  (function navMenu(){
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('mobileMenu');
+    const close = document.getElementById('mobileClose');
+    if(!toggle || !menu) return;
+    function open(){ menu.classList.add('open'); toggle.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
+    function shut(){ menu.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+    toggle.addEventListener('click', open);
+    close.addEventListener('click', shut);
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', shut));
+    document.addEventListener('keydown', e => { if(e.key==='Escape' && menu.classList.contains('open')) shut(); });
+  })();
+
+  // Entry form. Set data-endpoint on #clubForm to your email provider's
+  // form-POST URL (Mailchimp, Beehiiv, ConvertKit, Formspree, etc.) to go live.
+  (function clubForm(){
+    const form = document.getElementById('clubForm');
+    if(!form) return;
+    const msg = document.getElementById('clubMsg');
+    function say(text){ msg.textContent = text; msg.hidden = false; }
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const endpoint = form.getAttribute('data-endpoint');
+      const email = form.email.value.trim();
+      if(!email) return;
+      if(!endpoint){
+        say('🎉 You’re entered! (Connect an email provider to start sending.)');
+        form.reset();
+        return;
+      }
+      try {
+        const btn = form.querySelector('button');
+        btn.disabled = true; btn.textContent = 'Entering…';
+        await fetch(endpoint, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:new URLSearchParams({ email }) });
+        say('🎉 You’re entered! Check your inbox for your free printables.');
+        form.reset();
+        btn.disabled = false; btn.textContent = 'Enter free';
+      } catch(err){
+        say('Something went wrong — please try again.');
+      }
+    });
+  })();
+</script>
+
+</body>
+</html>
