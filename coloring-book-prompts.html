@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mr. Myth — The Magical Coloring Book · 100 Prompts</title>
+<style>
+  @page { size: A4; margin: 18mm; }
+  *{box-sizing:border-box}
+  body{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color:#1a1530;
+    background:#fff;
+    line-height:1.45;
+    font-size:11pt;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  h1{
+    font-size:28pt;
+    color:#3a2570;
+    border-bottom:3px solid #ffd56a;
+    padding-bottom:8px;
+    margin-bottom:6px;
+  }
+  .sub{color:#5a4632; font-size:12pt; margin-bottom:24px}
+  h2{
+    color:#3a2570;
+    font-size:18pt;
+    border-left:6px solid #ffd56a;
+    padding:6px 14px;
+    margin:32px 0 16px;
+    background:#fdf6e3;
+    page-break-after:avoid;
+  }
+  h3{
+    color:#3a2570;
+    font-size:13pt;
+    margin:24px 0 8px;
+    page-break-after:avoid;
+  }
+  .spec{
+    background:#fdf6e3;
+    border:1px solid #ffd56a;
+    border-radius:8px;
+    padding:14px 18px;
+    margin:18px 0;
+    font-size:10pt;
+  }
+  .spec strong{color:#3a2570}
+  .page-card{
+    border:1px solid #d8d1e8;
+    border-left:5px solid #ffd56a;
+    border-radius:6px;
+    padding:12px 16px;
+    margin:10px 0;
+    page-break-inside:avoid;
+  }
+  .page-card .head{
+    font-weight:700;
+    color:#3a2570;
+    font-size:12pt;
+    margin-bottom:6px;
+  }
+  .page-card .num{
+    display:inline-block;
+    background:#3a2570;
+    color:#fff;
+    border-radius:50%;
+    width:26px; height:26px;
+    text-align:center; line-height:26px;
+    font-size:10pt;
+    margin-right:8px;
+    font-weight:800;
+  }
+  .page-card .tier{
+    display:inline-block;
+    background:#ffd56a;
+    color:#3a2570;
+    border-radius:999px;
+    padding:1px 8px;
+    font-size:8pt;
+    font-weight:800;
+    margin-left:8px;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    vertical-align:middle;
+  }
+  .page-card .tier.t2{background:#a8c6e0}
+  .page-card .tier.t3{background:#e8b3a4}
+  .page-card .tier.front{background:#cfe5f0}
+  .page-card .tier.back{background:#d9e8c3}
+  .page-card .tier.activity{background:#f0c89e}
+  .page-card .prompt{
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size:9pt;
+    background:#fafafa;
+    border:1px solid #e8e2f5;
+    border-radius:4px;
+    padding:10px 12px;
+    margin-top:6px;
+    white-space:pre-wrap;
+    color:#2b1d3d;
+    line-height:1.4;
+  }
+  .page-card .hide{
+    color:#5a4632;
+    font-style:italic;
+    font-size:9pt;
+    margin-top:4px;
+  }
+  hr{
+    border:none;
+    border-top:1px dashed #bbb;
+    margin:18px 0;
+  }
+  .print-hint{
+    background:#3a2570;
+    color:#ffd56a;
+    padding:10px 16px;
+    border-radius:6px;
+    margin:14px 0 24px;
+    font-size:10pt;
+  }
+  @media print{
+    .print-hint{display:none}
+    body{padding:0; max-width:none}
+  }
+</style>
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<h1>Mr. Myth — The Magical Coloring Book</h1>
+<p class="sub">100 prompts · ages 2–10 · single-page coloring book · "Find Mr. Myth on every page!"</p>
+
+<div class="print-hint">
+  <strong>Make this a PDF:</strong> open this file in Chrome / Edge → Ctrl + P → Destination: <em>Save as PDF</em> → choose A4 / Letter. Done.
+</div>
+
+<div class="spec">
+  <strong>Brand specs (apply to every page):</strong>
+  <ul style="margin:6px 0 0 18px; padding:0">
+    <li><strong>Model in web UI:</strong> Seedream 5.0 Lite (your <em>unlimited</em> model)</li>
+    <li><strong>Quality:</strong> 2K · <strong>Aspect ratio:</strong> 3:4 (portrait) · <strong>Unlimited toggle:</strong> ON ✅</li>
+    <li><strong>Style spec baked into every prompt:</strong> no shading, no gray, no fill, pure line art on white, thick clean outlines (varies by tier)</li>
+    <li><strong>Hidden mechanic:</strong> every interior page hides a tiny silhouette of Mr. Myth (man with thick mustache + topknot bun) — the spot is noted under each prompt</li>
+    <li><strong>Tier 1 (Toddler 2–4):</strong> 4–5px outlines, 1–2 simple elements, kawaii style</li>
+    <li><strong>Tier 2 (Daily 5–7):</strong> 2–3px outlines, single character + simple scene</li>
+    <li><strong>Tier 3 (Magical 8–10):</strong> 1–2px outlines, richer scenes with foreground/midground/background</li>
+  </ul>
+</div>
+
+<!-- ============== FRONT MATTER ============== -->
+<h2>📖 Front Matter (Pages 1–4)</h2>
+
+<div class="page-card">
+  <div class="head"><span class="num">1</span>Cover <span class="tier front">Front</span></div>
+  <div class="prompt">Already designed (use your existing purple/gold rendered cover from the title-page reference).</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">2</span>Title page · "This book belongs to ___" <span class="tier front">Front</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A large decorative ornate title plaque centered on the page with the hand-lettered words "MR. MYTH — The Magical Coloring Book" in big bold playful serif font. Below, a long horizontal line with hand-lettered words "This book belongs to:" above it. Decorative storybook flourishes — small stars, swirls, tiny mushrooms — around the border. NO shading, NO gray, NO fill, pure line art on white background. Thick clean outlines. Friendly kawaii cartoon style. Hidden in one of the corner swirls: tiny silhouette of Mr. Myth (man with thick mustache and topknot bun). Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the bottom-left swirl flourish</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">3</span>Welcome letter from Mr. Myth <span class="tier front">Front</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Mr. Myth (a kind man with a topknot bun and a thick mustache, holding a glowing storybook) waving from the top of the page on a small cloud. Below him, a large decorative scroll banner with hand-lettered welcome text reading "Hello little friend! Welcome to my book. Color in my world and find me on every page!" in a friendly hand-drawn font. Decorative stars and sparkles around. NO shading, NO gray, NO fill, pure line art on white. Thick clean outlines. Friendly kawaii cartoon style. Hidden inside the scroll's curly ends: tiny silhouette of Mr. Myth himself. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: tucked into the scroll's curly end</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">4</span>How to find Mr. Myth (instructions page) <span class="tier front">Front</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Top of page: hand-lettered title "FIND ME ON EVERY PAGE!" Below: three example boxes showing the silhouette of Mr. Myth (man with mustache + topknot bun) hidden inside a tree trunk, a cloud, and a flower — each with a magnifying glass icon and a little arrow pointing at where he's hiding. Decorative stars and sparkles around. NO shading, NO gray, NO fill, pure line art on white. Thick clean outlines. Friendly cartoon style for kids. Hidden in the title's "F" letter: a fourth tiny Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the curve of the letter "F" in "FIND"</div>
+</div>
+
+<!-- ============== MEET THE FRIENDS ============== -->
+<h2>🌟 Meet the Friends (Pages 5–11)</h2>
+
+<div class="page-card">
+  <div class="head"><span class="num">5</span>Mr. Myth full portrait <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A friendly cartoon Mr. Myth standing tall and waving, with a thick fluffy mustache and a tall topknot bun hairstyle, wearing a flowing simple cape, holding a glowing storybook in his other hand. A small smile, kind eyes. A couple of stars and a tiny cloud float around him. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii cartoon style for ages 2-4. Hidden in the cloud above his head: tiny secondary silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the floating cloud</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">6</span>Leo the Lion · portrait <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A simple cartoon lion (Leo) sitting tall and centered with a big happy smile and a fluffy round mane. Tiny sun in the corner, one cloud above. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii cartoon style for ages 2-4. Hidden inside the curls of Leo's mane: tiny silhouette of Mr. Myth (man with mustache + topknot bun). Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the mane's curls</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">7</span>Ella the Elephant · portrait <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A simple cartoon elephant (Ella) standing tall and centered with a big happy smile and floppy ears, trunk curled up holding a tiny flower. One dragonfly nearby. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii cartoon style for ages 2-4. Hidden inside Ella's ear: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the curve of Ella's ear</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">8</span>Pip the Penguin · portrait <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A tiny round cartoon penguin (Pip) standing centered with a big happy smile, flippers out to the sides, on an ice floe with one snowflake. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii cartoon style for ages 2-4. Hidden inside the largest snowflake: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the snowflake's center pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">9</span>Bao the Panda · portrait <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A simple cuddly cartoon baby panda (Bao) sitting centered with a big happy smile and round tummy, holding a bamboo shoot. One bamboo leaf floats above. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii cartoon style for ages 2-4. Hidden inside the bamboo shoot pattern: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the bamboo node ring</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">10</span>Gia the Giraffe · portrait <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A simple tall cartoon giraffe (Gia) standing centered with a big happy smile, very long neck stretching up to a tiny leaf at the top of the page. Big spotted body. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii cartoon style for ages 2-4. Hidden inside one of Gia's spots: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the biggest spot on Gia's neck</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">11</span>Taro the Tiger · portrait <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A simple cartoon tiger (Taro) sitting tall and centered with a big happy smile, big striped tail curled around his paws. One firefly floats nearby. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii cartoon style for ages 2-4. Hidden inside one of Taro's stripes: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the widest stripe on Taro's back</div>
+</div>
+
+<!-- ============== TIER 1 ============== -->
+<h2>🟡 Tier 1 · Toddler (Ages 2–4) · Pages 12–36</h2>
+<p style="font-size:10pt; color:#5a4632; margin:0 0 12px">One simple subject per page. Thick 4–5px outlines. Big open shapes. Hidden Mr. Myth in every page.</p>
+
+<div class="page-card">
+  <div class="head"><span class="num">12</span>Smiling sun <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A big friendly smiling cartoon sun centered on the page with chubby cheeks and curly rays. One small cloud below. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the sun's smile or one of its rays: tiny silhouette of Mr. Myth (man with mustache + topknot bun). Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: tucked inside the longest ray</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">13</span>Fluffy cloud <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big fluffy cartoon cloud centered with a friendly smile. Three tiny stars around it. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the cloud's outline shape: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside one of the cloud's puff bumps</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">14</span>Twinkling star <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big friendly cartoon star centered with a happy smile and sleepy eyes. Three tiny stars around it. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside one of the star's points: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the top star point</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">15</span>Crescent moon <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big cartoon crescent moon centered with sleepy eyes and a soft smile. Three tiny stars around it and one small cloud below. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the moon's curve: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: tucked inside the moon's inner curve</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">16</span>Big flower <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon flower centered with a smiling face in the middle, six round petals, and a thick wavy stem with two leaves. One tiny bee buzzing nearby. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside one of the petals: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the top petal</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">17</span>Spotted mushroom <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big cartoon mushroom centered with a wide spotted cap and a thick stem, friendly smiling face on the stem. Two tiny mushrooms beside it. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside one of the cap's spots: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the largest spot on the cap</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">18</span>Butterfly <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big cartoon butterfly centered with big patterned wings, friendly smiling face, antennas curling up. Two tiny flowers beneath. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside one of the wing patterns: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the top wing's largest circle pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">19</span>Storybook tree <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon tree centered with a chubby trunk and a fluffy round leafy top, friendly smile on the trunk. Two apples on the leaves. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the leafy top: tiny silhouette of Mr. Myth peeking out. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: peeking out from the top leaves</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">20</span>Cozy house <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon storybook cottage centered with a round door, two square windows, a chimney with curly smoke, and a triangular roof. Two flowers in front. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden in the chimney smoke: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the curly chimney smoke</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">21</span>Floating balloon <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big cartoon balloon centered with a smiling face and a wavy string trailing down. Two tiny stars around it. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the balloon's curve: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: as a shadow inside the balloon's body</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">22</span>Flying kite <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big cartoon diamond-shaped kite centered with a smiling face and a long curly tail with three bows. Two clouds beside it. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the kite's pattern: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the kite's center diamond design</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">23</span>Teapot <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon teapot centered with a smiling face, a curly spout, and a round handle. Steam curls up. One tiny teacup beside it. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the steam curls: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the rising steam wisps</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">24</span>Umbrella with raindrops <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big cartoon umbrella centered with a smiling face on the handle and three round raindrops falling above it. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside one raindrop: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the largest raindrop</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">25</span>Sailboat <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon sailboat centered with a smiling face on the hull, two triangular sails, and gentle wavy water beneath. One sun and one cloud above. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the larger sail: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the main sail's pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">26</span>Little bird <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big chubby cartoon bird centered with a smiling face, round body, two simple wings, and tiny feet. One worm wiggles below. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the bird's wing: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the wing's feather pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">27</span>Friendly fish <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon fish centered with a smiling face, big round eye, scaly body, and a fan-shaped tail. Two bubbles float above. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside one bubble: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the biggest bubble</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">28</span>Frog on a lily pad <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big cartoon frog centered, sitting on a round lily pad floating on simple wavy water, with a smiling face and tiny dots on his back. One water lily flower beside it. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the lily flower: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the lily flower's petals</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">29</span>Turtle <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon turtle centered with a smiling face, round patterned shell, four chubby legs, and a tiny tail. One flower beside it. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside one of the shell's patterns: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the center shell pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">30</span>Bunny rabbit <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big chubby cartoon bunny centered with a smiling face, long floppy ears, big feet, and a fluffy round tail, holding a carrot. One flower beside it. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside one of the bunny's ears: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the inside of the bunny's left ear</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">31</span>Apple <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon apple centered with a smiling face, a leaf and a curly stem on top. One tiny worm peeking out of a small hole. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the leaf shape: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the apple leaf's vein pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">32</span>Rainbow <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon rainbow centered with six big bands and two friendly clouds with smiling faces at each end. One sun above. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside one of the clouds: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the left cloud's puff</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">33</span>Snail <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big chubby cartoon snail centered with a smiling face, two long curly antennas, and a big spiral shell on his back. One flower beside it. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the spiral of the shell: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the center of the spiral shell</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">34</span>Ice cream cone <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon ice cream cone centered with three round scoops of ice cream, a smiling face on the top scoop, a cherry on top, and a textured waffle cone. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the cherry shape: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the cherry's curl</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">35</span>Cupcake <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon cupcake centered with a smiling face, swirly frosting on top, a cherry, and a fluted paper wrapper at the bottom. Three sparkles around. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the frosting swirl: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the swirl of the frosting</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">36</span>Heart with stars <span class="tier">Tier 1</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. One big simple cartoon heart centered with a smiling face, surrounded by six tiny stars and two tiny sparkles. VERY THICK bold clean black outlines (4-5px), large simple shapes, NO shading, NO gray, NO fill, white background. Friendly kawaii style for ages 2-4. Hidden inside the largest star: tiny silhouette of Mr. Myth. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the biggest surrounding star</div>
+</div>
+
+<!-- ============== TIER 2 ============== -->
+<h2>🔵 Tier 2 · Daily Adventures (Ages 5–7) · Pages 37–66</h2>
+<p style="font-size:10pt; color:#5a4632; margin:0 0 12px">One character doing one simple action in their habitat. 2–3px outlines. Hidden Mr. Myth in every page.</p>
+
+<h3>🦁 Leo the Lion · Pages 37–41</h3>
+
+<div class="page-card">
+  <div class="head"><span class="num">37</span>Leo waking up at sunrise <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon lion (Leo) waking up with a big sleepy yawn in tall savanna grass at sunrise. The sun peeks over the horizon, two clouds float above, one acacia tree silhouette behind. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette (man with mustache + topknot bun) hidden in the rising sun's rays. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the longest sun ray</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">38</span>Leo stretching big <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon lion (Leo) doing a big stretch on his front paws, butt up, like a cat — in the middle of the savanna with tall grass around him, one small rock, and one tree in the distance. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden behind the rock. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: peeking out from behind the rock</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">39</span>Leo chasing butterflies <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon lion (Leo) playfully chasing three fluttering butterflies, leaping in tall savanna grass with a joyful smile. Tiny flowers scattered around. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden in the largest butterfly's wing pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the biggest butterfly's wing</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">40</span>Leo with a tiny mouse friend <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon lion (Leo) sitting peacefully with a tiny mouse friend perched on his nose, both smiling at each other. They're in tall savanna grass with one rock and a tiny flower. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside Leo's mane curls. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside Leo's mane swirls</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">41</span>Leo napping under a tree <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon lion (Leo) napping under the shade of a big leafy acacia tree on the savanna, with sleep "Z"s above his head and a happy smile. Tall grass beside him. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside the tree's leaf clusters. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the tree canopy leaves</div>
+</div>
+
+<h3>🐘 Ella the Elephant · Pages 42–46</h3>
+
+<div class="page-card">
+  <div class="head"><span class="num">42</span>Ella splashing in the river <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon elephant (Ella) standing in a sparkling river, lifting her trunk high and shooting a big arc of water up in the air, with a big happy smile. Two lily pads, one frog, three water droplets. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden in the water arc's curve. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the curve of the water arc</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">43</span>Ella eating bananas from a tree <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon elephant (Ella) using her trunk to pluck a bunch of bananas from a tall banana tree, smiling happily. A monkey peeks from the leaves. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden in the banana tree's leaves. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: among the banana tree fronds</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">44</span>Ella with dragonflies on her trunk <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon elephant (Ella) sitting calmly near a river with three dragonflies landed on her curled-up trunk, all smiling. Tiny lily pads around. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden in one dragonfly's wing pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the biggest dragonfly's wings</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">45</span>Ella watering a flower <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon elephant (Ella) gently spraying a tiny stream of water from her trunk onto a small thirsty flower beside her in the savanna, both smiling. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside Ella's ear. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside Ella's ear</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">46</span>Ella under a rainbow <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon elephant (Ella) standing happily under a big rainbow arc after the rain, with two smiling clouds at the rainbow's ends. Small puddles on the ground. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden in the left rainbow cloud. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the left cloud</div>
+</div>
+
+<h3>🐧 Pip the Penguin · Pages 47–51</h3>
+
+<div class="page-card">
+  <div class="head"><span class="num">47</span>Pip sliding on ice <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a tiny cartoon penguin (Pip) sliding belly-down across smooth ice with a big joyful grin, flippers spread out. Two icebergs in the background, three snowflakes. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside the largest snowflake. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the biggest snowflake's center</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">48</span>Pip catching a fish <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a tiny cartoon penguin (Pip) standing on an ice floe holding a wiggly fish in his beak with a proud smile, with simple ocean waves below. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside the fish's body pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the fish's scale pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">49</span>Pip watching the aurora <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a tiny cartoon penguin (Pip) sitting on a snow mound looking up at swirling aurora ribbons in the sky, eyes wide with wonder, mouth open in awe. A few stars and a crescent moon above. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside the aurora's curls. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside one aurora wave</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">50</span>Pip building a snowman <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a tiny cartoon penguin (Pip) happily putting a carrot nose on a small three-ball snowman, both smiling. A bucket of snow beside him, two snowflakes falling. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside the snowman's hat pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the snowman's top hat band</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">51</span>Pip with baby penguin friends <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a tiny cartoon penguin (Pip) leading three even tinier penguin chicks in a line across the ice, all smiling and waddling proudly. One iceberg behind. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside the iceberg shape. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the iceberg outline</div>
+</div>
+
+<h3>🐼 Bao the Panda · Pages 52–56</h3>
+
+<div class="page-card">
+  <div class="head"><span class="num">52</span>Bao climbing a bamboo stalk <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a baby cartoon panda (Bao) climbing up a tall bamboo stalk with a big grin, paws gripping the bamboo. Two leaves drift down beside him. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside one of the bamboo nodes. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside a bamboo ring/node</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">53</span>Bao eating a dumpling <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a baby cartoon panda (Bao) sitting cross-legged in a bamboo forest happily eating a steamed dumpling with both paws, eyes closed in joy. Two more dumplings in a tiny bowl beside him. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden in the dumpling's steam swirls. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the rising dumpling steam</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">54</span>Bao with fireflies <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a baby cartoon panda (Bao) sitting in a bamboo forest at twilight, surrounded by five gently glowing fireflies floating around his head, watching them with wonder. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden in one firefly's glow. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the biggest firefly's glow circle</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">55</span>Bao sleeping on a branch <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a baby cartoon panda (Bao) sleeping peacefully on a thick bamboo branch with a small smile, sleep Z's above his head. One leaf falls. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside the falling leaf's vein pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the falling leaf</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">56</span>Bao playing with a butterfly <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a baby cartoon panda (Bao) standing on his back paws reaching up to a butterfly hovering above his nose, both smiling. Bamboo behind. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden in the butterfly's wing patterns. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the butterfly's wing</div>
+</div>
+
+<h3>🦒 Gia the Giraffe · Pages 57–61</h3>
+
+<div class="page-card">
+  <div class="head"><span class="num">57</span>Gia reaching tall leaves <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon giraffe (Gia) stretching her very long neck way up to nibble leaves at the top of a tall acacia tree, with a happy smile. Tall grass below, sun in the corner. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside one of Gia's spots. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in one of Gia's spots</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">58</span>Gia drinking from a watering hole <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon giraffe (Gia) bending her long legs wide to lower her head and drink from a calm watering hole, with a peaceful smile. Two tiny birds drink beside her. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden in Gia's reflection in the water. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the water reflection's ripples</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">59</span>Gia with a bird on her head <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon giraffe (Gia) standing tall with a small smiling bird perched between her tiny horns, both smiling at each other. Savanna with one tree. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden in the bird's tail feather pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the bird's tail feathers</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">60</span>Gia under a starry sky <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon giraffe (Gia) looking up at a beautiful starry night sky with many stars and a crescent moon, eyes wide with wonder. Two tiny grass tufts at her feet. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside the crescent moon. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the moon's curve</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">61</span>Gia walking into the sunset <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon giraffe (Gia) walking peacefully toward a setting sun in the savanna, her long shadow stretching behind her. Two acacia trees on the horizon, three little birds in the sky. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside Gia's long shadow. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the long shadow shape</div>
+</div>
+
+<h3>🐯 Taro the Tiger · Pages 62–66</h3>
+
+<div class="page-card">
+  <div class="head"><span class="num">62</span>Taro walking through fireflies <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon tiger (Taro) padding slowly through a moonlit jungle clearing with five glowing fireflies floating around him, gentle smile. Two ferns and a tree silhouette. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside one firefly's glow. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the biggest firefly glow</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">63</span>Taro peeking through tall grass <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon tiger (Taro) crouched low and peeking with curious wide eyes from behind tall jungle grass, only his face and stripes showing. Two butterflies float nearby. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden in one of Taro's stripes. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside a stripe on Taro's forehead</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">64</span>Taro by a waterfall <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon tiger (Taro) sitting peacefully at the edge of a small jungle waterfall, watching the water flow with a calm smile. Tropical leaves and one orchid flower around. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside the waterfall's flow lines. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the waterfall's flowing water</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">65</span>Taro with a baby bird <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon tiger (Taro) sitting on a tree branch with a tiny baby bird nesting between his paws, both with happy smiles. Leaves and small nest beside them. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside the bird's nest weave. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the bird nest's woven pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">66</span>Taro looking up at the moon <span class="tier t2">Tier 2</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cartoon tiger (Taro) sitting on a small jungle hill, looking up at a big bright full moon in the night sky, calm peaceful smile. Stars around, one tropical tree silhouette. Clean bold black outlines (2-3px), moderate detail, NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-7. Tiny Mr. Myth silhouette hidden inside the moon's craters. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in one of the moon's crater patterns</div>
+</div>
+
+<!-- ============== TIER 3 ============== -->
+<h2>🟣 Tier 3 · Magical Worlds (Ages 8–10) · Pages 67–91</h2>
+<p style="font-size:10pt; color:#5a4632; margin:0 0 12px">Richer scenes with foreground/midground/background. 1–2px outlines. Hidden Mr. Myth in every page.</p>
+
+<div class="page-card">
+  <div class="head"><span class="num">67</span>Floating cloud castle <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a magical floating castle sitting on a fluffy pillow cloud with several tall towers, fluttering flags, and a winding staircase down to smaller clouds below. Birds and stars float around the towers. Cleaner thinner outlines (1-2px), richer scene with foreground, midground, and background, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette (man with mustache + topknot bun) tucked into the smoke rising from one of the castle chimneys. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the chimney smoke swirls</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">68</span>Treehouse village <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a tall ancient tree filled with five tiny wooden treehouses connected by rope bridges and hanging lanterns. Small owls perched on branches, tiny windows glowing. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into one of the treehouse windows. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the highest treehouse window</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">69</span>Mushroom forest <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a magical forest of giant patterned mushrooms of different sizes and shapes, with a winding path through them, tiny lanterns hanging from caps, ferns and flowers below. Two tiny fairies fluttering. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the largest mushroom's spot pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the biggest mushroom spot</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">70</span>Underwater castle <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a beautiful underwater castle made of seashells and coral with tall spires, surrounded by friendly fish, a smiling octopus, seaweed, and tiny bubbles rising. Two starfish on the seafloor. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the largest bubble. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the biggest rising bubble</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">71</span>Floating island chain <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a chain of three small floating islands in the sky connected by hanging rope bridges, each with a tiny tree, a tiny waterfall pouring off the edge into clouds below, and small birds flying around. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into one of the rope bridge knots. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside a rope-bridge knot pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">72</span>Rainbow bridge over a valley <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a beautiful arching rainbow bridge crossing a deep valley between two storybook mountains, with tiny figures walking across, two clouds at the rainbow's ends, a sparkling river below. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into one of the rainbow bands. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the top rainbow band's pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">73</span>Wizard's tower <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a tall slender wizard's stone tower with multiple windows glowing softly, a swirling pointed roof, books and a telescope visible through windows, an owl on the roof, stars surrounding. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the largest tower window. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the top window</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">74</span>Crystal cave <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: the inside of a magical cave filled with tall pointed crystals of various shapes growing from the floor and ceiling, tiny sparkles between them, a small underground river flowing through, a friendly cave creature peeking from a corner. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the largest central crystal. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the central crystal facet</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">75</span>Magical garden <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a magical garden with smiling tulips, daisies, sunflowers, vines twisting up a tiny trellis, butterflies, a tiny stone path leading to a tiny gate, and a friendly snail. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the largest sunflower's center pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the sunflower's seed pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">76</span>Moonlit lake with fairies <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a tranquil moonlit lake reflecting a big full moon, with three tiny fairies fluttering above the water trailing sparkles, lily pads and reeds at the edges, a deer drinking. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the moon's reflection in the water. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the moon's lake reflection</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">77</span>Hot air balloon adventure <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a beautifully patterned hot air balloon floating high above the clouds, with a tiny basket beneath holding a cheerful explorer waving with a flag. Birds flying nearby, distant mountains poking through cloud tops. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the balloon's main pattern panel. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the balloon's central panel design</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">78</span>Mountain train <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cute storybook steam train chugging along a winding mountain track, with a smiling face on the engine, smoke puffing from its chimney, four passenger cars, tunnels through peaks, and tiny pine trees on the slopes. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the engine's smoke clouds. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the steam clouds</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">79</span>Sky pirate ship <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a wooden pirate ship with billowing sails sailing through fluffy clouds in the sky instead of water, a friendly cartoon pirate at the wheel, rope ladders, a treasure chest on deck, a parrot on the rail. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the main sail's pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the main sail design</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">80</span>Star-catcher boat <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a tiny boat floating in the night sky, a child reaching up with a net catching falling stars, a crescent moon and many tiny stars surrounding, a trail of star dust behind the boat. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the star dust trail. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the star dust trail</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">81</span>Snow palace <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a magical icy palace made of crystalline ice with tall pointed spires, intricate icicles hanging, snowflakes falling, two small ice sculptures of bears outside, snowy hills in the background. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the largest snowflake pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the largest snowflake</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">82</span>Baby dragon's nest <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cozy nest at the top of a tall mountain peak holding two patterned dragon eggs and one already-hatched chubby baby dragon with a big smile, breathing tiny smoke puffs. A few clouds drifting below. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into a dragon egg's pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside one dragon egg's swirl pattern</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">83</span>Unicorn meadow <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a magical meadow with a smiling unicorn standing in a field of flowers, mane flowing with sparkles, a rainbow arc behind, tiny butterflies fluttering, a stream winding through. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the unicorn's flowing mane swirls. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the unicorn's mane curls</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">84</span>Owl observatory <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a friendly cartoon owl on top of an observatory dome at night, looking through a telescope pointed at the stars, the dome's interior visible with star maps and books, a crescent moon above. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into a star map's constellation pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside a constellation on the star map</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">85</span>Library of stars <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a magical library where every book glows like a tiny star, floating shelves in a vast room, a smiling friendly librarian creature, ladders, an open book with stars drifting out of it. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into an open book's text-page pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the open-book's page lines</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">86</span>Magic carpet ride <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a beautifully patterned flying carpet zooming over a city of domed buildings and minarets at night, with a happy child riding it waving, stars and a crescent moon in the sky. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the carpet's central woven pattern. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the carpet's center motif</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">87</span>Storybook portal <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a giant open storybook on a wooden desk, with a swirling magical portal rising from its pages, tiny silhouettes of fairy-tale characters and animals emerging from the swirl, candle and quill beside the book. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the portal's swirling center. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the portal swirl</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">88</span>Map of Mr. Myth's world <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a beautifully illustrated fantasy treasure map showing different lands — the Savanna, the River, the Ice, the Bamboo Forest, the Jungle, the Cloud Castle — connected by winding paths, each labeled, with a tiny compass rose, dotted travel lines, and a cartoon sea serpent in one ocean. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into the compass rose's center. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the center of the compass rose</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">89</span>Town fair at night <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a magical night fair with a Ferris wheel, a striped circus tent, a cotton candy stand, hanging lanterns, happy figures walking around, stars overhead. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into one of the Ferris wheel cabins. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the top Ferris wheel cabin</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">90</span>Cozy bedtime bedroom <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a cozy storybook child's bedroom at night with a bed, a stuffed lion toy, a starry window letting moonlight in, a tiny bookshelf with the Mr. Myth book on it, a hanging lantern, a sleepy cat curled on a rug. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette tucked into a star pattern on the window. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in a star pattern outside the window</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">91</span>Dream world clouds <span class="tier t3">Tier 3</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Scene: a sky full of fluffy clouds shaped like animals — a cloud lion, a cloud elephant, a cloud penguin, a cloud panda — drifting peacefully across a starry sky with a crescent moon watching over them. Cleaner thinner outlines (1-2px), richly detailed scene, NO shading, NO gray, NO fill — pure line art on white. Magical whimsical fantasy style for ages 8-10. Hidden Mr. Myth silhouette as one of the small clouds drifting at the edge. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: as a tiny cloud shape itself</div>
+</div>
+
+<!-- ============== ACTIVITIES ============== -->
+<h2>🟠 Activity Pages · Pages 92–96</h2>
+
+<div class="page-card">
+  <div class="head"><span class="num">92</span>Connect-the-dots — Mr. Myth's hat <span class="tier activity">Activity</span></div>
+  <div class="prompt">Black and white children's coloring book ACTIVITY page, 3:4 portrait. A connect-the-dots puzzle in the center where about 30 numbered dots (1 to 30) trace the outline of Mr. Myth's tall topknot bun hairstyle and head silhouette. Numbers are clearly printed beside each dot. At the bottom: small caption "Connect the dots to find Mr. Myth's hair!" Decorative tiny stars in the corners. NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-8. Professional children's coloring book activity page.</div>
+  <div class="hide">No hidden Mr. Myth — he IS the dot-to-dot reveal</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">93</span>Maze — help Leo find his way home <span class="tier activity">Activity</span></div>
+  <div class="prompt">Black and white children's coloring book ACTIVITY page, 3:4 portrait. A simple kid-friendly square maze taking up most of the page, with a cute cartoon lion (Leo) labeled "START" at the top-left corner and a cute cottage labeled "HOME" at the bottom-right corner, decorative savanna grass and acacia trees around the maze border. NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-8. Hidden Mr. Myth silhouette tucked into one of the maze walls' corners. Professional children's coloring book activity page.</div>
+  <div class="hide">Hidden Mr. Myth: at a maze wall corner</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">94</span>Spot the difference — Ella's river <span class="tier activity">Activity</span></div>
+  <div class="prompt">Black and white children's coloring book ACTIVITY page, 3:4 portrait. Two nearly-identical horizontal panels of a cartoon elephant (Ella) playing in a river with lily pads, a dragonfly, and a sun. The bottom panel has 5 small intentional differences from the top panel (a missing dragonfly wing pattern, an added cloud, an extra lily pad, a different number of water droplets, a smiling vs neutral fish). Title at top: "Find 5 differences!" NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 5-8. Hidden Mr. Myth silhouette as ONE of the 5 differences (he appears in one panel only, hidden in a cloud). Professional children's coloring book activity page.</div>
+  <div class="hide">Mr. Myth IS one of the differences (he's hidden in a cloud in one panel only)</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">95</span>Word search — animal names <span class="tier activity">Activity</span></div>
+  <div class="prompt">Black and white children's coloring book ACTIVITY page, 3:4 portrait. A simple 10x10 word-search grid in the center with hand-lettered capital letters, with a small word list below containing the names: LEO, ELLA, PIP, BAO, GIA, TARO, MYTH. Title at top: "Find the friends!" Decorative tiny stars, paws, and footprints around the border. NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 6-10. Tiny Mr. Myth silhouette hidden in one of the corner star patterns. Professional children's coloring book activity page.</div>
+  <div class="hide">Hidden Mr. Myth: inside a corner-decoration star</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">96</span>Counting page — count the stars <span class="tier activity">Activity</span></div>
+  <div class="prompt">Black and white children's coloring book ACTIVITY page, 3:4 portrait. A night sky scene with Mr. Myth on a crescent moon and many scattered stars of different sizes. At the bottom: a row of numbered boxes (1 to 10) for kids to write how many stars of each size they counted. Title at top: "Can you count all the stars?" NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style for ages 4-7. (Mr. Myth is featured here, not hidden.) Professional children's coloring book activity page.</div>
+  <div class="hide">Mr. Myth is the visible main character on this page</div>
+</div>
+
+<!-- ============== BACK MATTER ============== -->
+<h2>📗 Back Matter (Pages 97–100)</h2>
+
+<div class="page-card">
+  <div class="head"><span class="num">97</span>Certificate of Coloring Mastery <span class="tier back">Back</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A grand decorative ornate certificate centered on the page with a swirly border, a banner at top reading "CERTIFICATE OF COLORING MASTERY", below: hand-lettered text "This certifies that ________________ has bravely colored every page of Mr. Myth's Magical Coloring Book". A "Signed by Mr. Myth" line at the bottom with his decorative signature, and a star-shaped seal. Decorative stars around. NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style. Hidden Mr. Myth silhouette tucked into the certificate seal's center. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: inside the star seal</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">98</span>Free-draw page <span class="tier back">Back</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A big decorative ornate empty rectangular frame in the center of the page with curly storybook flourishes, swirls, and tiny stars around it. Above the frame: hand-lettered title "Draw your own friend for Mr. Myth!" The inside of the frame is COMPLETELY EMPTY (large blank white drawing area). NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style. Hidden Mr. Myth silhouette tucked into one of the frame's corner flourishes. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the top-left flourish swirl</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">99</span>"The End — Goodnight from Mr. Myth" <span class="tier back">Back</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. Mr. Myth (a kind man with topknot bun and thick mustache) sitting peacefully on a crescent moon waving goodnight, with all six little animal friends (Leo, Ella, Pip, Bao, Gia, Taro) sleeping below him in a cozy starlit pile. Three sleep "Z"s above the pile. Big hand-lettered title at top "The End — Goodnight, little friends!" NO shading, NO gray, NO fill — pure line art on white. Friendly kawaii cartoon style. (Mr. Myth is openly featured, not hidden — final reveal.) Professional children's coloring book line art.</div>
+  <div class="hide">Final reveal — Mr. Myth is the main subject</div>
+</div>
+
+<div class="page-card">
+  <div class="head"><span class="num">100</span>About / colophon <span class="tier back">Back</span></div>
+  <div class="prompt">Black and white children's coloring book page, 3:4 portrait. A simple decorative "About this book" page. At the top: hand-lettered "About Mr. Myth". Below: a small portrait of Mr. Myth and a short hand-lettered paragraph (leave space for real text — render only a few placeholder lines). At the bottom: a small colophon plate with placeholder text "© Mr. Myth Collection · Printed with love · MrMyth.com". Decorative storybook flourishes around the border. NO shading, NO gray, NO fill — pure line art on white. Friendly cartoon style. Hidden Mr. Myth silhouette tucked into the colophon plate's corner. Professional children's coloring book line art.</div>
+  <div class="hide">Hidden Mr. Myth: in the colophon corner ornament</div>
+</div>
+
+<hr/>
+
+<h2>🚀 Workflow tips</h2>
+<div class="spec" style="font-size:10pt">
+  <strong>Speed run technique:</strong>
+  <ol style="margin:6px 0 0 18px; padding:0">
+    <li>Open 3 tabs on higgsfield.ai/generate</li>
+    <li>Set each to Seedream V5 Lite · 2K · 3:4 · Unlimited ON</li>
+    <li>Paste prompts from this PDF — one tab renders while you queue the next</li>
+    <li>Right-click → Save Image As → name files <code>page-12.png</code>, <code>page-13.png</code> sequentially</li>
+    <li>Realistic pace: 20–30 pages/hour. Whole book in 4–5 sessions.</li>
+  </ol>
+  <br>
+  <strong>If a generated page is too busy:</strong> add "minimal background, only ONE main subject" to the prompt and resubmit.<br>
+  <strong>If hidden Mr. Myth is too visible:</strong> add "Mr. Myth silhouette is tiny and subtle, blends into the pattern".<br>
+  <strong>For PDF compilation:</strong> drop all PNGs into <a href="https://canva.com">Canva</a> with a "Coloring Book 8.5×11" template, drag each to its own page, export as PDF print-ready.<br>
+  <strong>For Amazon KDP publishing:</strong> page size 8.5×11", bleeds 0.125", interior PDF black & white, cover PDF separate. Trim down the final PDF to KDP's interior PDF spec, then upload.
+</div>
+
+<p style="text-align:center; color:#5a4632; margin:40px 0 8px; font-size:10pt">
+Generated for Mr. Myth Collection · 100 prompts · "Find Mr. Myth on every page"
+</p>
+
+</body>
+</html>
