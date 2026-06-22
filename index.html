@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mr. Myth — Animals Of The World</title>
-<meta name="description" content="A magical 2-in-1 story and coloring adventure for kids ages 2+. Travel the world with Mr. Myth and meet Leo the lion, Ella the elephant, Pip the penguin, and more." />
+<meta name="description" content="A magical 2-in-1 story & coloring adventure for kids ages 2+ — in paperback ($11.99) and hardcover ($19.99), plus the standalone Magical Coloring Book ($9.99). Travel the world with Mr. Myth and meet Leo the lion, Ella the elephant, Pip the penguin, and more." />
 <meta property="og:title" content="Mr. Myth — Animals Of The World" />
 <meta property="og:description" content="A magical 2-in-1 story and coloring adventure. Wherever stories begin… Mr. Myth is always nearby." />
 <meta property="og:image" content="images/cover.jpg" />
@@ -549,6 +549,15 @@
     border-radius:2px;
     border:1px dashed rgba(43,29,13,.2);
   }
+  .coloring-more{
+    text-align:center; margin-top:44px;
+    color:var(--soft-ink); font-size:16px;
+  }
+  .coloring-more a{
+    color:var(--ember); font-weight:800; text-decoration:none;
+    border-bottom:2px solid rgba(217,118,64,.4);
+  }
+  .coloring-more a:hover{border-bottom-color:var(--ember)}
 
   /* ============ DETAILS & CTA ============ */
   .details-section{
@@ -558,65 +567,111 @@
     position:relative;
     overflow:hidden;
   }
-  .details-inner{
-    max-width:1100px; margin:0 auto;
-    display:grid; grid-template-columns: 1fr 1fr; gap:80px; align-items:center;
+  .shop-head{
+    text-align:center;
+    max-width:640px; margin:0 auto 56px;
     position:relative; z-index:2;
   }
-  @media(max-width:880px){
-    .details-inner{grid-template-columns:1fr; gap:40px}
+  .shop-eyebrow{
+    display:inline-block;
+    font-size:12px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--gold-bright); font-weight:800;
+    margin-bottom:14px;
   }
-
-  .details-cover{
-    position:relative;
-    transform:rotate(2deg);
-  }
-  .details-cover img{
-    width:100%;
-    border-radius:8px;
-    box-shadow:0 40px 100px rgba(0,0,0,.6), 0 0 0 1px rgba(255,213,106,.3);
-  }
-  .details-cover::before{
-    content:""; position:absolute; inset:-40px;
-    background:radial-gradient(ellipse at center, rgba(255,213,106,.3) 0%, transparent 65%);
-    z-index:-1; filter:blur(20px);
-  }
-
-  .details-content h2{
+  .shop-head h2{
     font-family:'Cormorant Garamond',serif;
     font-weight:500;
     font-size:clamp(38px, 5vw, 58px);
     line-height:1.05;
     color:var(--cream);
-    margin-bottom:20px;
+    margin-bottom:16px;
   }
-  .details-content h2 em{color:var(--gold-bright); font-style:italic}
-  .details-content > p{
-    color:rgba(248,239,217,.8); font-size:17px;
-    margin-bottom:30px;
+  .shop-head h2 em{color:var(--gold-bright); font-style:italic}
+  .shop-head p{color:rgba(248,239,217,.8); font-size:17px}
+
+  .shop-grid{
+    position:relative; z-index:2;
+    display:grid; grid-template-columns:repeat(2, 1fr); gap:30px;
+    max-width:900px; margin:0 auto;
+    align-items:stretch;
   }
-  .specs{
-    display:grid; grid-template-columns:auto 1fr; gap:14px 24px;
-    padding:24px 0;
-    border-top:1px solid rgba(255,213,106,.2);
-    border-bottom:1px solid rgba(255,213,106,.2);
-    margin-bottom:30px;
+  @media(max-width:780px){
+    .shop-grid{grid-template-columns:1fr; max-width:420px}
   }
-  .specs dt{
-    font-size:11px; letter-spacing:2.5px; text-transform:uppercase;
-    color:var(--gold-bright); font-weight:800;
-    align-self:center;
+  .book-card{
+    background:var(--cream);
+    border-radius:20px;
+    padding:30px 26px;
+    display:flex; flex-direction:column; align-items:center;
+    text-align:center;
+    box-shadow:0 24px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,213,106,.22);
+    border:1px solid rgba(255,255,255,.5);
   }
-  .specs dd{font-size:15px; color:var(--cream)}
-  .price-row{
-    display:flex; align-items:baseline; gap:14px;
-    margin-bottom:24px;
+  .book-card .cover{
+    width:min(190px, 62%);
+    aspect-ratio:2/3;
+    border-radius:8px; overflow:hidden;
+    margin-bottom:22px;
+    background:#fff;
+    box-shadow:0 18px 40px rgba(0,0,0,.35), 0 0 0 1px rgba(43,29,13,.12);
+    transform:rotate(-2deg);
+    transition:transform .3s ease;
   }
-  .price-row .amt{
+  .book-card:nth-child(2) .cover{transform:rotate(2deg)}
+  .book-card:hover .cover{transform:rotate(0) translateY(-4px)}
+  .book-card .cover img{width:100%; height:100%; object-fit:cover}
+  .book-flag{
+    display:inline-block;
+    font-size:11px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--ember); font-weight:800;
+    margin-bottom:8px;
+  }
+  .book-card h3{
     font-family:'Cormorant Garamond',serif;
-    font-size:42px; font-weight:600; color:var(--gold-bright);
+    font-weight:600; font-size:30px; line-height:1.1;
+    color:var(--ink); margin-bottom:8px;
   }
-  .price-row .note{color:rgba(248,239,217,.6); font-size:13px}
+  .book-card .book-meta{
+    color:var(--soft-ink); font-size:14px; line-height:1.5;
+    margin-bottom:22px;
+  }
+  .buy-options{
+    display:flex; flex-direction:column; gap:10px;
+    width:100%; margin-top:auto;
+  }
+  .buy-btn{
+    display:flex; align-items:center; justify-content:space-between; gap:12px;
+    background:var(--gold); color:var(--night-deep);
+    padding:13px 22px; border-radius:999px;
+    font-weight:800; font-size:13px; letter-spacing:.6px; text-transform:uppercase;
+    text-decoration:none;
+    box-shadow:0 8px 22px rgba(255,213,106,.3);
+    transition:transform .2s, box-shadow .2s, background .2s;
+  }
+  .buy-btn:hover{
+    transform:translateY(-2px); background:var(--gold-bright);
+    box-shadow:0 12px 30px rgba(255,213,106,.45);
+  }
+  .buy-btn .price{
+    font-family:'Cormorant Garamond',serif;
+    font-size:21px; font-weight:700; letter-spacing:0;
+    text-transform:none;
+  }
+  .buy-btn.alt{
+    background:transparent; color:var(--ink);
+    border:2px solid var(--gold); box-shadow:none;
+    padding:11px 20px;
+  }
+  .buy-btn.alt:hover{background:var(--gold); color:var(--night-deep)}
+  .buy-secondary{
+    margin-top:14px;
+    font-size:12px; font-weight:800; letter-spacing:1px; text-transform:uppercase;
+    color:var(--soft-ink); text-decoration:none;
+    border-bottom:1px solid var(--gold);
+    align-self:center;
+    transition:color .2s;
+  }
+  .buy-secondary:hover{color:var(--ember)}
 
   /* ============ COMING SOON ============ */
   .coming-soon{
@@ -862,7 +917,7 @@
     <a href="#journey" class="nav-pill">The Stories</a>
     <a href="#coloring" class="nav-pill">Coloring</a>
     <a href="/blog/" class="nav-pill mobile-show">Blog</a>
-    <a class="nav-pill cta" href="https://www.amazon.com/dp/B0H5KP16HB/" target="_blank" rel="noopener">Buy →</a>
+    <a class="nav-pill cta" href="#buy">Buy →</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg>
     </button>
@@ -876,7 +931,7 @@
   <a href="#journey">The Stories</a>
   <a href="#coloring">Coloring</a>
   <a href="/blog/">Blog</a>
-  <a class="cta" href="https://www.amazon.com/dp/B0H5KP16HB/" target="_blank" rel="noopener">Buy on Amazon</a>
+  <a class="cta" href="#buy">Get the Books</a>
   <a href="https://www.barnesandnoble.com/w/mr-myth-animals-of-the-world-mr-myth/1150339600?ean=9798258409799" target="_blank" rel="noopener">Barnes &amp; Noble</a>
 </div>
 
@@ -1092,41 +1147,47 @@
       <div class="col-card"><div class="tape"></div><img src="images/coloring_turtle.jpg" alt="Coloring page — sea turtle" loading="lazy" /></div>
       <div class="col-card"><div class="tape"></div><img src="images/coloring_shark.jpg" alt="Coloring page — shark" loading="lazy" /></div>
     </div>
+
+    <p class="coloring-more reveal">Can't get enough coloring? There's a whole <a href="#coloring-book">standalone Magical Coloring Book</a> — 100 pages, just $9.99.</p>
   </div>
 </section>
 
 <!-- ============ DETAILS + BUY ============ -->
 <section class="details-section" id="buy">
   <div class="stars dim"></div>
-  <div class="details-inner">
-    <div class="details-cover reveal">
-      <img src="images/cover.jpg" alt="Mr. Myth book cover" loading="lazy" />
+  <div class="shop-head reveal">
+    <span class="shop-eyebrow">Bring Mr. Myth home</span>
+    <h2>Pick your <em>adventure.</em></h2>
+    <p>The story &amp; coloring book in paperback or hardcover — plus a whole standalone coloring book. Free delivery, in stock now.</p>
+  </div>
+
+  <div class="shop-grid">
+    <!-- Flagship 2-in-1 -->
+    <div class="book-card reveal">
+      <div class="cover"><img src="images/cover.jpg" alt="Mr. Myth — Animals of the World book cover" loading="lazy" /></div>
+      <span class="book-flag">2-in-1 story &amp; coloring</span>
+      <h3>Animals of the World</h3>
+      <p class="book-meta">75 pages · Large print · Ages 2+<br/>The complete six-story adventure with coloring pages to match.</p>
+      <div class="buy-options">
+        <a class="buy-btn" href="https://www.amazon.com/dp/B0H5KP16HB/" target="_blank" rel="noopener">
+          <span>Paperback</span><span class="price">$11.99</span>
+        </a>
+        <a class="buy-btn alt" href="https://www.amazon.com/dp/B0H5KP16HB/" target="_blank" rel="noopener">
+          <span>Hardcover</span><span class="price">$19.99</span>
+        </a>
+        <a class="buy-secondary" href="https://www.barnesandnoble.com/w/mr-myth-animals-of-the-world-mr-myth/1150339600?ean=9798258409799" target="_blank" rel="noopener">Also at Barnes &amp; Noble →</a>
+      </div>
     </div>
 
-    <div class="details-content reveal">
-      <h2>The whole adventure, in your hands.</h2>
-      <p>A sturdy paperback with large print, designed to be read aloud at bedtime, colored at the kitchen table, and gifted on the right day.</p>
-
-      <dl class="specs">
-        <dt>Author</dt><dd>Mr. Myth Collection</dd>
-        <dt>Format</dt><dd>Paperback · Large Print</dd>
-        <dt>Pages</dt><dd>75</dd>
-        <dt>Ages</dt><dd>2 and up</dd>
-        <dt>Released</dt><dd>1 May 2026</dd>
-        <dt>ISBN-13</dt><dd>979-8181657243</dd>
-      </dl>
-
-      <div class="price-row">
-        <span class="amt">$11.99</span>
-        <span class="note">USD · Free delivery · In stock now</span>
-      </div>
-
-      <div class="hero-cta-row">
-        <a class="btn-gold" href="https://www.amazon.com/dp/B0H5KP16HB/" target="_blank" rel="noopener">
-          Get on Amazon →
-        </a>
-        <a class="btn-outline-gold" href="https://www.barnesandnoble.com/w/mr-myth-animals-of-the-world-mr-myth/1150339600?ean=9798258409799" target="_blank" rel="noopener">
-          Barnes &amp; Noble →
+    <!-- Standalone coloring book -->
+    <div class="book-card reveal" id="coloring-book">
+      <div class="cover"><img src="images/coloring_panda.jpg" alt="Mr. Myth — The Magical Coloring Book cover" loading="lazy" /></div>
+      <span class="book-flag">All coloring, all fun</span>
+      <h3>The Magical Coloring Book</h3>
+      <p class="book-meta">100 pages · Ages 2+<br/>A whole book of Mr. Myth scenes ready for crayons, pencils &amp; paint.</p>
+      <div class="buy-options">
+        <a class="buy-btn" href="https://www.amazon.com/Mr-Myth-Magical-Coloring-Book/dp/B0H63GX26H/" target="_blank" rel="noopener">
+          <span>Coloring Book</span><span class="price">$9.99</span>
         </a>
       </div>
     </div>
