@@ -1,6 +1,7 @@
 // Returns the latest MythVerse Kids uploads as JSON, sourced from the
-// channel's public RSS feed (no API key needed; feed carries ~15 newest videos).
-const CHANNEL_ID = 'UC2ufVUMUUcEwaMsmsmiHmFw';
+// channel's long-form-only playlist feed (UULF… excludes Shorts; no API key
+// needed; feed carries ~15 newest videos).
+const LONGFORM_PLAYLIST_ID = 'UULF2ufVUMUUcEwaMsmsmiHmFw';
 
 function decodeEntities(str) {
   return str
@@ -14,7 +15,7 @@ function decodeEntities(str) {
 module.exports = async (req, res) => {
   try {
     const feedRes = await fetch(
-      `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`
+      `https://www.youtube.com/feeds/videos.xml?playlist_id=${LONGFORM_PLAYLIST_ID}`
     );
     if (!feedRes.ok) throw new Error(`Feed responded ${feedRes.status}`);
     const xml = await feedRes.text();
